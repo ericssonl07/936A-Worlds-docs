@@ -1,0 +1,460 @@
+\doxysection{Odometry Class Reference}
+\hypertarget{class_odometry}{}\label{class_odometry}\index{Odometry@{Odometry}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_odometry_af42d3d54ebaad307c9811b16436eedc4}{Odometry}} (vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_aec06f2e1c44c913d696abd483b2250e7}{forward\+\_\+track}}, vex\+::rotation \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1}{side\+\_\+track}}, vex\+::inertial \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_odometry_aafa5eb3c66f46694cc396efbca367ac0}{imu}}, double \mbox{\hyperlink{class_odometry_a0e7edb11247b7069724fcaa037a407cc}{left\+\_\+right\+\_\+offset}}, double \mbox{\hyperlink{class_odometry_a02eab126d73117d1160934e5821f6566}{forward\+\_\+back\+\_\+offset}}, double \mbox{\hyperlink{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae}{tracking\+\_\+radius}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_odometry}{Odometry} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}} ()
+\begin{DoxyCompactList}\small\item\em Get the robot\textquotesingle{}s x-\/coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}} ()
+\begin{DoxyCompactList}\small\item\em Get the robot\textquotesingle{}s y-\/coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}} ()
+\begin{DoxyCompactList}\small\item\em Get the robot\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_odometry_a699bbc51fa495b061d9a24a0c9bf39b6}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the robot\textquotesingle{}s position and rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_odometry_aeb38760053310d809afe72f6bb973350}{set\+\_\+pose}} (double \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}}, double \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}}, double \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the robot\textquotesingle{}s position and rotation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_odometry_ac18d38cb4cd5e70718882c6d1d4c8cfc}{get\+\_\+forward}} ()
+\begin{DoxyCompactList}\small\item\em Get the forward tracking wheel\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_ae391f87e222151375acc76c3bb219137}{get\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em Get the side tracking wheel\textquotesingle{}s rotation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vex\+::thread \mbox{\hyperlink{class_odometry_abeca43e5c94c800d4d9c6db4caced69e}{tracking\+\_\+thread}}
+\begin{DoxyCompactList}\small\item\em Thread for tracking the robot\textquotesingle{}s position and orientation. \end{DoxyCompactList}\item 
+vex\+::thread \mbox{\hyperlink{class_odometry_a8482c003c4a05544112f396c6b297bd4}{displaying\+\_\+thread}}
+\begin{DoxyCompactList}\small\item\em Thread for displaying the robot\textquotesingle{}s position and orientation. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_aec06f2e1c44c913d696abd483b2250e7}{forward\+\_\+track}}
+\begin{DoxyCompactList}\small\item\em Forward tracking wheel. \end{DoxyCompactList}\item 
+vex\+::rotation \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1}{side\+\_\+track}}
+\begin{DoxyCompactList}\small\item\em Side tracking wheel. \end{DoxyCompactList}\item 
+vex\+::inertial \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_odometry_aafa5eb3c66f46694cc396efbca367ac0}{imu}}
+\begin{DoxyCompactList}\small\item\em Inertial sensor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a0e7edb11247b7069724fcaa037a407cc}{left\+\_\+right\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em Offset of the left/right tracking wheel to the tracking center. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a02eab126d73117d1160934e5821f6566}{forward\+\_\+back\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em Offset of the front/back tracking wheel to the tracking center. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae}{tracking\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em Radius of the tracking wheels. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1}{x\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the robot\textquotesingle{}s position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a152cdf0625df734e307d9d206371f29d}{y\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the robot\textquotesingle{}s position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_odometry_a897d4644460001a93359621ca426bbd0}{rotation\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Rotation of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_odometry_a019a64c208f467a62d6beb174eba0e1b}{track}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em Track the robot\textquotesingle{}s position and orientation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21}{display}} (void \texorpdfstring{$\ast$}{*}o)
+\begin{DoxyCompactList}\small\item\em Display the robot\textquotesingle{}s position and orientation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2chassis_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/chassis.\+hpp}}, and \mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_odometry_af42d3d54ebaad307c9811b16436eedc4}\index{Odometry@{Odometry}!Odometry@{Odometry}}
+\index{Odometry@{Odometry}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{Odometry()}{Odometry()}}
+{\footnotesize\ttfamily \label{class_odometry_af42d3d54ebaad307c9811b16436eedc4} 
+Odometry\+::\+Odometry (\begin{DoxyParamCaption}\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{forward\+\_\+track}{, }\item[{vex\+::rotation \texorpdfstring{$\ast$}{*}}]{side\+\_\+track}{, }\item[{vex\+::inertial \texorpdfstring{$\ast$}{*}}]{imu}{, }\item[{double}]{left\+\_\+right\+\_\+offset}{, }\item[{double}]{forward\+\_\+back\+\_\+offset}{, }\item[{double}]{tracking\+\_\+radius}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_odometry}{Odometry} class. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em forward\+\_\+track} & Forward tracking wheel (parallel to the robot\textquotesingle{}s velocity vector) \\
+\hline
+{\em side\+\_\+track} & Side tracking wheel (perpendicular to the robot\textquotesingle{}s velocity vector) \\
+\hline
+{\em imu} & Inertial sensor (calibrated and with vex\+::turn\+Type\+::left specifier) \\
+\hline
+{\em left\+\_\+right\+\_\+offset} & Offset of the left/right tracking wheel to the tracking center (left is positive, right is negative) \\
+\hline
+{\em forward\+\_\+back\+\_\+offset} & Offset of the front/back tracking wheel to the tracking center (forward is negative, backward is positive) \\
+\hline
+{\em tracking\+\_\+radius} & Radius of the tracking wheels (distance from the center of the tracking wheel to its outer edge) \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_odometry_ae391f87e222151375acc76c3bb219137}\index{Odometry@{Odometry}!get\_back@{get\_back}}
+\index{get\_back@{get\_back}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{get\_back()}{get\_back()}}
+{\footnotesize\ttfamily \label{class_odometry_ae391f87e222151375acc76c3bb219137} 
+double Odometry\+::get\+\_\+back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the side tracking wheel\textquotesingle{}s rotation. 
+
+get\+\_\+side \begin{DoxyNote}{Note}
+This function returns the rotation of the side tracking wheel, in inches. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The rotation of the side tracking wheel, in inches. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_ac18d38cb4cd5e70718882c6d1d4c8cfc}\index{Odometry@{Odometry}!get\_forward@{get\_forward}}
+\index{get\_forward@{get\_forward}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{get\_forward()}{get\_forward()}}
+{\footnotesize\ttfamily \label{class_odometry_ac18d38cb4cd5e70718882c6d1d4c8cfc} 
+double Odometry\+::get\+\_\+forward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the forward tracking wheel\textquotesingle{}s rotation. 
+
+get\+\_\+forward \begin{DoxyNote}{Note}
+This function returns the rotation of the forward tracking wheel, in inches. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The rotation of the forward tracking wheel, in inches. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a699bbc51fa495b061d9a24a0c9bf39b6}\index{Odometry@{Odometry}!reset@{reset}}
+\index{reset@{reset}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_odometry_a699bbc51fa495b061d9a24a0c9bf39b6} 
+void Odometry\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the robot\textquotesingle{}s position and rotation. 
+
+reset \begin{DoxyNote}{Note}
+This function resets the robot\textquotesingle{}s position and rotation to (0, 0, 0). 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}\index{Odometry@{Odometry}!rotation@{rotation}}
+\index{rotation@{rotation}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily \label{class_odometry_a19e41f86d55e90de7bd1200e66018bf4} 
+double Odometry\+::rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the robot\textquotesingle{}s rotation. 
+
+rotation \begin{DoxyReturn}{Returns}
+Rotation of the robot (radians) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_aeb38760053310d809afe72f6bb973350}\index{Odometry@{Odometry}!set\_pose@{set\_pose}}
+\index{set\_pose@{set\_pose}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{set\_pose()}{set\_pose()}}
+{\footnotesize\ttfamily \label{class_odometry_aeb38760053310d809afe72f6bb973350} 
+void Odometry\+::set\+\_\+pose (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Set the robot\textquotesingle{}s position and rotation. 
+
+set\+\_\+pose 
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the robot\textquotesingle{}s position (inches) \\
+\hline
+{\em y} & Y-\/coordinate of the robot\textquotesingle{}s position (inches) \\
+\hline
+{\em rotation} & Rotation of the robot (radians) \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}\index{Odometry@{Odometry}!x@{x}}
+\index{x@{x}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily \label{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3} 
+double Odometry\+::x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the robot\textquotesingle{}s x-\/coordinate. 
+
+x \begin{DoxyReturn}{Returns}
+X-\/coordinate of the robot\textquotesingle{}s position (inches) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}\index{Odometry@{Odometry}!y@{y}}
+\index{y@{y}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily \label{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a} 
+double Odometry\+::y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the robot\textquotesingle{}s y-\/coordinate. 
+
+y \begin{DoxyReturn}{Returns}
+Y-\/coordinate of the robot\textquotesingle{}s position (inches) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21}\index{Odometry@{Odometry}!display@{display}}
+\index{display@{display}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily \label{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21} 
+int display (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Display the robot\textquotesingle{}s position and orientation. 
+
+display \begin{DoxyNote}{Note}
+This function is run in a separate thread to continuously update the display with the robot\textquotesingle{}s position and orientation. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0-\/ never returns 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a019a64c208f467a62d6beb174eba0e1b}\index{Odometry@{Odometry}!track@{track}}
+\index{track@{track}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{track}{track}}
+{\footnotesize\ttfamily \label{class_odometry_a019a64c208f467a62d6beb174eba0e1b} 
+int track (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Track the robot\textquotesingle{}s position and orientation. 
+
+track \begin{DoxyNote}{Note}
+This function is run in a separate thread to continuously update the robot\textquotesingle{}s position and orientation. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0-\/ never returns 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_odometry_a8482c003c4a05544112f396c6b297bd4}\index{Odometry@{Odometry}!displaying\_thread@{displaying\_thread}}
+\index{displaying\_thread@{displaying\_thread}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{displaying\_thread}{displaying\_thread}}
+{\footnotesize\ttfamily \label{class_odometry_a8482c003c4a05544112f396c6b297bd4} 
+vex\+::thread Odometry\+::displaying\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thread for displaying the robot\textquotesingle{}s position and orientation. 
+
+displaying\+\_\+thread \begin{DoxyNote}{Note}
+This thread runs the display function to continuously update the display with the robot\textquotesingle{}s position and orientation. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+vex\+::thread 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a02eab126d73117d1160934e5821f6566}\index{Odometry@{Odometry}!forward\_back\_offset@{forward\_back\_offset}}
+\index{forward\_back\_offset@{forward\_back\_offset}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{forward\_back\_offset}{forward\_back\_offset}}
+{\footnotesize\ttfamily \label{class_odometry_a02eab126d73117d1160934e5821f6566} 
+double Odometry\+::forward\+\_\+back\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Offset of the front/back tracking wheel to the tracking center. 
+
+forward\+\_\+back\+\_\+offset \begin{DoxyNote}{Note}
+Forward is negative, backward is positive. Given in inches. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_aec06f2e1c44c913d696abd483b2250e7}\index{Odometry@{Odometry}!forward\_track@{forward\_track}}
+\index{forward\_track@{forward\_track}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{forward\_track}{forward\_track}}
+{\footnotesize\ttfamily \label{class_odometry_aec06f2e1c44c913d696abd483b2250e7} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Odometry\+::forward\+\_\+track\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Forward tracking wheel. 
+
+forward\+\_\+track \begin{DoxyNote}{Note}
+This wheel is parallel to the robot\textquotesingle{}s velocity vector. It is used to track the robot\textquotesingle{}s forward/backward movement. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+vex\+::rotation 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_aafa5eb3c66f46694cc396efbca367ac0}\index{Odometry@{Odometry}!imu@{imu}}
+\index{imu@{imu}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{imu}{imu}}
+{\footnotesize\ttfamily \label{class_odometry_aafa5eb3c66f46694cc396efbca367ac0} 
+vex\+::inertial\texorpdfstring{$\ast$}{*} Odometry\+::imu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inertial sensor. 
+
+imu \begin{DoxyNote}{Note}
+This sensor is used to track the robot\textquotesingle{}s rotation. It is expected to be calibrated and properly aligned with the robot\textquotesingle{}s frame of reference. Also, it should follow mathematical convention of positive rotations being counter-\/clockwise. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+vex\+::inertial
+\end{DoxySeeAlso}
+vex\+::inertial\+::calibrate \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a0e7edb11247b7069724fcaa037a407cc}\index{Odometry@{Odometry}!left\_right\_offset@{left\_right\_offset}}
+\index{left\_right\_offset@{left\_right\_offset}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{left\_right\_offset}{left\_right\_offset}}
+{\footnotesize\ttfamily \label{class_odometry_a0e7edb11247b7069724fcaa037a407cc} 
+double Odometry\+::left\+\_\+right\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Offset of the left/right tracking wheel to the tracking center. 
+
+left\+\_\+right\+\_\+offset \begin{DoxyNote}{Note}
+Left is positive, right is negative. Given in inches. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a897d4644460001a93359621ca426bbd0}\index{Odometry@{Odometry}!rotation\_value@{rotation\_value}}
+\index{rotation\_value@{rotation\_value}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{rotation\_value}{rotation\_value}}
+{\footnotesize\ttfamily \label{class_odometry_a897d4644460001a93359621ca426bbd0} 
+double Odometry\+::rotation\+\_\+value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rotation of the robot. 
+
+rotation\+\_\+value \begin{DoxyNote}{Note}
+This is the angle of the robot\textquotesingle{}s rotation, in radians. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1}\index{Odometry@{Odometry}!side\_track@{side\_track}}
+\index{side\_track@{side\_track}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{side\_track}{side\_track}}
+{\footnotesize\ttfamily \label{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1} 
+vex\+::rotation\texorpdfstring{$\ast$}{*} Odometry\+::side\+\_\+track\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Side tracking wheel. 
+
+side\+\_\+track \begin{DoxyNote}{Note}
+This wheel is perpendicular to the robot\textquotesingle{}s velocity vector. It is used to track the robot\textquotesingle{}s left/right movement. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+vex\+::rotation 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae}\index{Odometry@{Odometry}!tracking\_radius@{tracking\_radius}}
+\index{tracking\_radius@{tracking\_radius}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{tracking\_radius}{tracking\_radius}}
+{\footnotesize\ttfamily \label{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae} 
+double Odometry\+::tracking\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radius of the tracking wheels. 
+
+tracking\+\_\+radius \begin{DoxyNote}{Note}
+This is the distance from the center of the tracking wheel to its outer edge, in inches. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_abeca43e5c94c800d4d9c6db4caced69e}\index{Odometry@{Odometry}!tracking\_thread@{tracking\_thread}}
+\index{tracking\_thread@{tracking\_thread}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{tracking\_thread}{tracking\_thread}}
+{\footnotesize\ttfamily \label{class_odometry_abeca43e5c94c800d4d9c6db4caced69e} 
+vex\+::thread Odometry\+::tracking\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thread for tracking the robot\textquotesingle{}s position and orientation. 
+
+tracking\+\_\+thread \begin{DoxyNote}{Note}
+This thread runs the track function to continuously update the robot\textquotesingle{}s position and orientation. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+vex\+::thread 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1}\index{Odometry@{Odometry}!x\_position@{x\_position}}
+\index{x\_position@{x\_position}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{x\_position}{x\_position}}
+{\footnotesize\ttfamily \label{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1} 
+double Odometry\+::x\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+X-\/coordinate of the robot\textquotesingle{}s position. 
+
+x\+\_\+position \begin{DoxyNote}{Note}
+This is the distance from the center of the robot to the tracking center, in inches. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+\Hypertarget{class_odometry_a152cdf0625df734e307d9d206371f29d}\index{Odometry@{Odometry}!y\_position@{y\_position}}
+\index{y\_position@{y\_position}!Odometry@{Odometry}}
+\doxysubsubsection{\texorpdfstring{y\_position}{y\_position}}
+{\footnotesize\ttfamily \label{class_odometry_a152cdf0625df734e307d9d206371f29d} 
+double Odometry\+::y\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Y-\/coordinate of the robot\textquotesingle{}s position. 
+
+y\+\_\+position \begin{DoxyNote}{Note}
+This is the distance from the center of the robot to the tracking center, in inches. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{odometry_8hpp}{odometry.\+hpp}}\end{DoxyCompactItemize}

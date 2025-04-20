@@ -1,0 +1,56 @@
+\doxysection{include/path.hpp File Reference}
+\hypertarget{path_8hpp}{}\label{path_8hpp}\index{include/path.hpp@{include/path.hpp}}
+
+
+This struct represents a 2D coordinate point with x and y values.  
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}
+\item 
+struct \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}}
+\item 
+class \mbox{\hyperlink{class_cubic_spline}{Cubic\+Spline}}
+\item 
+class \mbox{\hyperlink{class_path}{Path}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This struct represents a 2D coordinate point with x and y values. 
+
+This class represents a path for a robot to follow, defined by a set of points in 2D space.
+
+This class represents a cubic spline interpolation for a set of points. It provides methods for constructing the spline and evaluating it at given points.
+
+This struct represents a cubic expression with coefficients a, b, c, and d\+: y = ax\texorpdfstring{$^\wedge$}{\string^}\{3\} + bx\texorpdfstring{$^\wedge$}{\string^}\{2\} + cx + d.
+
+\begin{DoxyAuthor}{Author}
+@ericssonl07 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/19
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+@ericssonl07 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/19
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+Cubic Spline interpolation is a method of constructing a smooth curve through a set of points using piecewise cubic polynomials. The resulting curve is continuous and has continuous first and second derivatives (C\texorpdfstring{$^\wedge$}{\string^}\{2\} continuity). This is achieved by solving a system of linear equations (for n+1 points, n cubic polynomials giving 4n equations and 4n unknowns).
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+@ericssonl07 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/20
+\end{DoxyDate}
+The \doxylink{class_path}{Path} class is necessarily a wrapper around the \doxylink{class_cubic_spline}{Cubic\+Spline} class, providing an interface for constructing linear approximations of a smooth curve given through a set of points. The class provides methods for constructing the path from a set of points, evaluating the path at given points, and serializing the path to a file for later use to avoid runtime overhead. \begin{DoxyNote}{Note}
+Cubic spline interpolation uses piecewise cubic polynomials to create a smooth curve through a set of points. Importantly, a cubic spline is a FUNCTION, meaning that it is a single-\/valued function for each x-\/coordinate. In order to create a generic path in 2D space (which is almost certainly not a function and rather a relation), we need to use a parametric representation. The class achieves this by generating a uniformly spaced set of time points along the path, which can be used to create a smooth spline for x and y independently. 
+\end{DoxyNote}

@@ -1,0 +1,160 @@
+\doxysection{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}
+\hypertarget{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{}\label{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ the\ MotorGroup\ class:}}
+\DoxyCodeLine{\mbox{\hyperlink{class_motor}{Motor}}\ motor1(vex::PORT1,\ vex::gearSetting::ratio18\_1,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\mbox{\hyperlink{class_motor}{Motor}}\ motor2(vex::PORT2,\ vex::gearSetting::ratio18\_1,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\mbox{\hyperlink{class_motor_group}{MotorGroup}}\ motorGroup(1.0,\ 2.0,\ \&motor1,\ \&motor2);\ \textcolor{comment}{//\ Create\ a\ MotorGroup\ with\ two\ motors,\ external\ ratio\ 1.0\ and\ wheel\ radius\ 2.0}}
+\DoxyCodeLine{motorGroup.spin(50);\ \textcolor{comment}{//\ Spin\ all\ motors\ at\ 50\ in/s\ for\ wheel\ tangential\ velocity}}
+\DoxyCodeLine{motorGroup.spin(12.0,\ vex::voltageUnits::volt);\ \textcolor{comment}{//\ Spin\ all\ motors\ at\ 12V}}
+\DoxyCodeLine{motorGroup.spin(50,\ vex::percentUnits::pct);\ \textcolor{comment}{//\ Spin\ all\ motors\ at\ 50\%\ power\ (internal\ calculation\ to\ 6V)}}
+\DoxyCodeLine{motorGroup.stop();\ \textcolor{comment}{//\ Stop\ all\ motors}}
+\DoxyCodeLine{motorGroup.reset();\ \textcolor{comment}{//\ Reset\ the\ position\ of\ all\ motors}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ k\ =\ motorGroup.connected();\ \textcolor{comment}{//\ Check\ the\ connection\ status\ of\ all\ motors\ as\ a\ bitset}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ n\ =\ motorGroup.number\_connected();\ \textcolor{comment}{//\ Get\ the\ number\ of\ connected\ motors}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{\ \ connected\_status\ =\ k\ \&\ (1\ <<\ i);}
+\DoxyCodeLine{\ \ printf(\textcolor{stringliteral}{"{}Motor\ \%d\ connected:\ \%d\(\backslash\)n"{}},\ i,\ connected\_status);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ avg\_position\ =\ motorGroup.device\_position(vex::rotationUnits::deg);\ \textcolor{comment}{//\ Get\ the\ average\ position\ of\ all\ motors\ in\ degrees}}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ avg\_wheel\_position\ =\ motorGroup.wheel\_position(vex::rotationUnits::deg);\ \textcolor{comment}{//\ Get\ the\ average\ wheel\ position\ of\ all\ motors\ in\ degrees}}
+
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\doxylink{class_motor}{Motor}
+\end{DoxySeeAlso}
+vex\+::motor
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ MOTOR\_GROUP\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ MOTOR\_GROUP\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vex.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{motor_8hpp}{motor.hpp}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_motor_group}{MotorGroup}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7}{cartridge\_ratio}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a4b4b2f6329f915320281f3f78f0e9614}{gear\_ratio}}(vex::gearSetting\ gears)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (gears)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ vex::gearSetting::ratio6\_1:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ 6.0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ vex::gearSetting::ratio18\_1:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ 18.0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ vex::gearSetting::ratio36\_1:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ 36.0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\_motor}}(Motor*\ motor)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}.push\_back(motor);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\_motor}}(Motor*\ motor,\ Args...\ args)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}.push\_back(motor);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\_motor}}(args...);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<Motor*>\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_motor_group_a79f2df55a8439050a7181583fce66c6e}{MotorGroup}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}},\ Motor*\ motor):\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}(),\ \mbox{\hyperlink{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7}{cartridge\_ratio}}(1),\ \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}}(\mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}}),\ \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}}(\mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\_motor}}(motor);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_motor_group_a79f2df55a8439050a7181583fce66c6e}{MotorGroup}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}},\ Motor*\ motor,\ Args...\ args):\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}(),\ \mbox{\hyperlink{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7}{cartridge\_ratio}}(1),\ \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}}(\mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\_ratio}}),\ \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}}(\mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\_radius}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\_motor}}(args...);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ Motor\&\ \mbox{\hyperlink{class_motor_group_a1f80d62dde6373cdfc97b4fcb285ff94}{operator\ []\ }}(\textcolor{keywordtype}{int}\ idx)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}[idx];}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(\textcolor{keywordtype}{double}\ velocity)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(velocity);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(\textcolor{keywordtype}{double}\ power,\ vex::percentUnits\ units)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(power,\ units);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(\textcolor{keywordtype}{double}\ voltage,\ vex::voltageUnits\ units)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}}(voltage,\ units);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a9891330c66bdd08bbda215cfc9975331}{reset}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ motor\ -\/>\ reset\_position();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_group_a336075ad006fa2c4c31caed0c471b2c1}{stop}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a336075ad006fa2c4c31caed0c471b2c1}{stop}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_motor_group_a75d6d643d0af173837f01b89625731a5}{connected}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ bitset\ of\ connected\ motors}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ 0,\ idx\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ result\ |=\ ((motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a75d6d643d0af173837f01b89625731a5}{connected}}()\ ?\ 1\ :\ 0)\ <<\ (idx++));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_motor_group_aade22b14524c31affed615ce48ab0c86}{number\_connected}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (motor\ -\/>\ \mbox{\hyperlink{class_motor_group_a75d6d643d0af173837f01b89625731a5}{connected}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++result;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_ac4d700ca8967c81a867b4fdcf247c1a9}{device\_position}}(vex::rotationUnits\ units)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ result\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_ac4d700ca8967c81a867b4fdcf247c1a9}{device\_position}}(units);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result\ /\ (double)\ \mbox{\hyperlink{class_motor_group_aade22b14524c31affed615ce48ab0c86}{number\_connected}}();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_ae7d1826c0acdc9efcb4e7c5f2a8d6c92}{wheel\_position}}(vex::rotationUnits\ units)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ result\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Motor*\ motor:\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ motor\ -\/>\ \mbox{\hyperlink{class_motor_group_ae7d1826c0acdc9efcb4e7c5f2a8d6c92}{wheel\_position}}(units);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result\ /\ (double)\ \mbox{\hyperlink{class_motor_group_aade22b14524c31affed615ce48ab0c86}{number\_connected}}();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_motor_group_aa1b0ca001c79706c9766cb8426d3bf7d}{max\_wheel\_velocity}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}[0]\ -\/>\ \mbox{\hyperlink{class_motor_group_aa1b0ca001c79706c9766cb8426d3bf7d}{max\_wheel\_velocity}}();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MOTOR\_GROUP\_HPP}}
+
+\end{DoxyCodeInclude}
+ 

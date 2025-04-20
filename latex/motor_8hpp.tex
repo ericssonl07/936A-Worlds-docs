@@ -1,0 +1,39 @@
+\doxysection{include/motor.hpp File Reference}
+\hypertarget{motor_8hpp}{}\label{motor_8hpp}\index{include/motor.hpp@{include/motor.hpp}}
+
+
+This class represents a motor and provides methods for controlling its behavior.  
+
+
+{\ttfamily \#include $<$vex.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$pid.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_motor}{Motor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{motor_8hpp_a21fdde9fb0336f298ec1715060277ea0}\label{motor_8hpp_a21fdde9fb0336f298ec1715060277ea0} 
+\#define {\bfseries MOTOR\+\_\+\+HPP}
+\item 
+\Hypertarget{motor_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}\label{motor_8hpp_ae71449b1cc6e6250b91f539153a7a0d3} 
+\#define {\bfseries M\+\_\+\+PI}~3.\+14159265358979323846
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents a motor and provides methods for controlling its behavior. 
+
+\begin{DoxyAuthor}{Author}
+@ericssonl07 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/19
+\end{DoxyDate}
+The \doxylink{class_motor}{Motor} class is designed to work with a VEX motor and provides methods for spinning the motor, resetting its position, and checking its connection status. It allows for easy manipulation of the motor\textquotesingle{}s speed, voltage, and position. The class is an abstraction on top of vex\+::motor that accounts for gear ratios. \begin{DoxyAttention}{Attention}
+The gear ratio is expected to be given as the ratio of output spin to input spin. For instance, if the motor spins 6 times for every 1 turn of the wheel, the external ratio should be set to 1/6 as the external wheel turns 1/6 times for every 1 turn of the motor. There is no need to account for the cartridge, which vex\+::motor does automatically. 
+\end{DoxyAttention}

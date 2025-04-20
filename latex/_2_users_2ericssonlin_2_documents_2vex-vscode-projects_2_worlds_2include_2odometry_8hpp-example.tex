@@ -1,0 +1,89 @@
+\doxysection{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/odometry.\+hpp}
+\hypertarget{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}{}\label{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2odometry_8hpp-example}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ the\ Odometry\ class\ (independent\ usage\ not\ recommended-\/\ recommended\ usage\ through\ Chassis):}}
+\DoxyCodeLine{vex::rotation\ forward\_track(vex::PORT1,\ vex::gearSetting::ratio18\_1,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{vex::rotation\ side\_track(vex::PORT2,\ vex::gearSetting::ratio18\_1,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{vex::inertial\ imu(vex::PORT3,\ vex::turnType::left);}
+\DoxyCodeLine{imu.calibrate();\ \textcolor{comment}{//\ Calibrate\ the\ IMU}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (imu.is\_calibrating())\ \{\ \textcolor{comment}{//\ Wait\ for\ calibration\ to\ finish}}
+\DoxyCodeLine{\ \ vex::this\_thread::sleep\_for(100);\ \textcolor{comment}{//\ During\ this\ period,\ ensure\ the\ robot\ is\ stationary}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\mbox{\hyperlink{class_odometry}{Odometry}}\ odometry(\&forward\_track,\ \&side\_track,\ \&imu,\ 0.0,\ 0.0,\ 2.5);}
+\DoxyCodeLine{odometry.set\_pose(0.0,\ 0.0,\ 0.0);\ \textcolor{comment}{//\ Set\ initial\ position}}
+\DoxyCodeLine{odometry.x();\ \textcolor{comment}{//\ Get\ the\ current\ x\ position}}
+\DoxyCodeLine{odometry.y();\ \textcolor{comment}{//\ Get\ the\ current\ y\ position}}
+\DoxyCodeLine{odometry.rotation();\ \textcolor{comment}{//\ Get\ the\ current\ rotation}}
+
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+vex\+::rotation
+\end{DoxySeeAlso}
+vex\+::inertial
+
+The \href{https://wiki.purduesigbots.com/software/odometry}{\texttt{ Sigbots Odometry page}}
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ VEXLIBRARY\_VIRTUAL\_ODOMETRY\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ VEXLIBRARY\_VIRTUAL\_ODOMETRY\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vex.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{motor__group_8hpp}{motor\_group.hpp}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_odometry}{Odometry}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_odometry_a019a64c208f467a62d6beb174eba0e1b}{track}}(\textcolor{keywordtype}{void}*\ o);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_odometry_a9fe9780b2dd6b1dd96ad0e95f26bfb21}{display}}(\textcolor{keywordtype}{void}*\ o);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vex::thread\ \mbox{\hyperlink{class_odometry_abeca43e5c94c800d4d9c6db4caced69e}{tracking\_thread}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vex::thread\ \mbox{\hyperlink{class_odometry_a8482c003c4a05544112f396c6b297bd4}{displaying\_thread}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vex::rotation*\ \mbox{\hyperlink{class_odometry_aec06f2e1c44c913d696abd483b2250e7}{forward\_track}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vex::rotation*\ \mbox{\hyperlink{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1}{side\_track}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vex::inertial*\ \mbox{\hyperlink{class_odometry_aafa5eb3c66f46694cc396efbca367ac0}{imu}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a0e7edb11247b7069724fcaa037a407cc}{left\_right\_offset}};\ \textcolor{comment}{//\ left\ is\ positive}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a02eab126d73117d1160934e5821f6566}{forward\_back\_offset}};\ \textcolor{comment}{//\ back\ is\ positive}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae}{tracking\_radius}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a81c0b7d07a9fe73367cc1f3f7f6d48a1}{x\_position}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a152cdf0625df734e307d9d206371f29d}{y\_position}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a897d4644460001a93359621ca426bbd0}{rotation\_value}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_ac18d38cb4cd5e70718882c6d1d4c8cfc}{get\_forward}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_ae391f87e222151375acc76c3bb219137}{get\_back}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_odometry_af42d3d54ebaad307c9811b16436eedc4}{Odometry}}(vex::rotation*\ \mbox{\hyperlink{class_odometry_aec06f2e1c44c913d696abd483b2250e7}{forward\_track}},\ vex::rotation*\ \mbox{\hyperlink{class_odometry_ad74f9a4ea86e04b305ae1275e14edac1}{side\_track}},\ vex::inertial*\ \mbox{\hyperlink{class_odometry_aafa5eb3c66f46694cc396efbca367ac0}{imu}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a0e7edb11247b7069724fcaa037a407cc}{left\_right\_offset}},\ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a02eab126d73117d1160934e5821f6566}{forward\_back\_offset}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a8097b23dc2342a4c0d7380ce457d99ae}{tracking\_radius}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_odometry_a699bbc51fa495b061d9a24a0c9bf39b6}{reset}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_odometry_aeb38760053310d809afe72f6bb973350}{set\_pose}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a44f2bf668f29cf04e5ea23916639bdd3}{x}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a46fd133060c76689ed34fb1bd38dfb2a}{y}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_odometry_a19e41f86d55e90de7bd1200e66018bf4}{rotation}});}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ VEXLIBRARY\_VIRTUAL\_ODOMETRY\_HPP}}
+
+\end{DoxyCodeInclude}
+ 

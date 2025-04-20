@@ -1,0 +1,43 @@
+\doxysection{Execution\+Graph Class Reference}
+\hypertarget{class_execution_graph}{}\label{class_execution_graph}\index{ExecutionGraph@{ExecutionGraph}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_execution_graph_ab3867e8fcf7bee7a36deec1ef86f4f4f}\label{class_execution_graph_ab3867e8fcf7bee7a36deec1ef86f4f4f} 
+using {\bfseries Func\+Type} = std\+::function$<$void()$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_execution_graph_a97fc100bfc609f6487ef85a1413c05bf}\label{class_execution_graph_a97fc100bfc609f6487ef85a1413c05bf} 
+{\bfseries Execution\+Graph} (Func\+Type func=nullptr)
+\item 
+\Hypertarget{class_execution_graph_a93a011eeffe909a1ec88f58a4e604a84}\label{class_execution_graph_a93a011eeffe909a1ec88f58a4e604a84} 
+\mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} \& {\bfseries then} (Func\+Type func)
+\item 
+\Hypertarget{class_execution_graph_ad0d5cf1c182511e28018c852904c70d1}\label{class_execution_graph_ad0d5cf1c182511e28018c852904c70d1} 
+\mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} \& {\bfseries after\+\_\+delay} (int delay\+Seconds, Func\+Type func)
+\item 
+\Hypertarget{class_execution_graph_a184f4239847d2c53cc219a528fe29094}\label{class_execution_graph_a184f4239847d2c53cc219a528fe29094} 
+\mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} \& {\bfseries meanwhile} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} $>$ $>$ nodes)
+\item 
+\Hypertarget{class_execution_graph_ae4fef1b39b26b40c2ff6faa2266d29d3}\label{class_execution_graph_ae4fef1b39b26b40c2ff6faa2266d29d3} 
+void {\bfseries run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_execution_graph_a7bbd1a344b94947418e6a938469efda8}\label{class_execution_graph_a7bbd1a344b94947418e6a938469efda8} 
+Func\+Type {\bfseries func\+\_\+}
+\item 
+\Hypertarget{class_execution_graph_a41225e9e3d0632cf211087e49d2226ee}\label{class_execution_graph_a41225e9e3d0632cf211087e49d2226ee} 
+std\+::vector$<$ std\+::pair$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} $>$ $>$ $>$ {\bfseries children\+\_\+}
+\item 
+\Hypertarget{class_execution_graph_a66f80c9348abfe6ec11baf6b948ed9f8}\label{class_execution_graph_a66f80c9348abfe6ec11baf6b948ed9f8} 
+\mbox{\hyperlink{class_execution_graph}{Execution\+Graph}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+current}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{execution__graph_8hpp}{execution\+\_\+graph.\+hpp}}\end{DoxyCompactItemize}

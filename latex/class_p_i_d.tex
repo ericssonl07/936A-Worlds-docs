@@ -1,0 +1,724 @@
+\doxysection{PID Class Reference}
+\hypertarget{class_p_i_d}{}\label{class_p_i_d}\index{PID@{PID}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_i_d_a0311b6f7de348499ce24e53ba353514a}{PID}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_p_i_d}{PID}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_p_i_d_ab3243d97576ba2f613d49c005a0c76c0}{PID}} (double kp, double ki, double kd, double \mbox{\hyperlink{class_p_i_d_ae8a7a3a7cf1fed7e6f30a08b7305b126}{target}}, double \mbox{\hyperlink{class_p_i_d_afe9d0dc598ee048fc2b0d631888f8674}{tolerance}}, double \mbox{\hyperlink{class_p_i_d_a1b16e043f1fb82a18398cbb6992f643b}{max\+\_\+value}}, double \mbox{\hyperlink{class_p_i_d_a3eb8bfc03fdf698a0e4827b453466742}{min\+\_\+value}}, double \mbox{\hyperlink{class_p_i_d_aa24c4408da2ae9c05181c0799edc0471}{activation\+\_\+threshold}}, double \mbox{\hyperlink{class_p_i_d_a29b03660b75e6ea8a8481420d2d54de8}{integration\+\_\+threshold}}, double \mbox{\hyperlink{class_p_i_d_aa44b5a3c369fc7c19e334cd6a2e6f35e}{derivative\+\_\+threshold}}, double \mbox{\hyperlink{class_p_i_d_a427e9a258eeb9785067de4db03b7c16f}{max\+\_\+integral}}, double \mbox{\hyperlink{class_p_i_d_aa0ee690896d579d1868df735bf606302}{gamma}}, bool deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign=true)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_p_i_d}{PID}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_ae8a7a3a7cf1fed7e6f30a08b7305b126}{target}} () const
+\begin{DoxyCompactList}\small\item\em Get the target value. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_p_i_d_ab1a98d67845b26aeb54c78d2c106d25b}{target}} (double new\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Set the target value. \end{DoxyCompactList}\item 
+const std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{class_p_i_d_a5b1a3f557a1aee5583239b1aa4a9fc42}{limits}} () const
+\begin{DoxyCompactList}\small\item\em Get the limits of the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{class_p_i_d_ae834d2b5f910209348eabfe2e442517e}{limits}} (double new\+\_\+min, double new\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Set the limits of the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_a1b16e043f1fb82a18398cbb6992f643b}{max\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum value. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_a3eb8bfc03fdf698a0e4827b453466742}{min\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Get the minimum value. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_aa24c4408da2ae9c05181c0799edc0471}{activation\+\_\+threshold}} () const
+\begin{DoxyCompactList}\small\item\em Get the activation threshold. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_a29b03660b75e6ea8a8481420d2d54de8}{integration\+\_\+threshold}} () const
+\begin{DoxyCompactList}\small\item\em Get the integration threshold. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_aa44b5a3c369fc7c19e334cd6a2e6f35e}{derivative\+\_\+threshold}} () const
+\begin{DoxyCompactList}\small\item\em Get the derivative threshold. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_a427e9a258eeb9785067de4db03b7c16f}{max\+\_\+integral}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum integral value. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_aa0ee690896d579d1868df735bf606302}{gamma}} () const
+\begin{DoxyCompactList}\small\item\em Get the gamma value. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{class_p_i_d_afe9d0dc598ee048fc2b0d631888f8674}{tolerance}} () const
+\begin{DoxyCompactList}\small\item\em Get the deactivate integral on error sign flag. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a805677b35cd486fc5e1f6ccf5098292f}{calculate}} (double current, bool limit=true)
+\begin{DoxyCompactList}\small\item\em Compute the \doxylink{class_p_i_d}{PID} output for the given current value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_p_i_d_afb58c9ded15b18307115077de08bad93}{arrived}} () const
+\begin{DoxyCompactList}\small\item\em Check if the controller has arrived at the target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a4cd41c5442fe3d89262ae39ad3811dac}{set\+\_\+gains}} (double kp, double ki, double kd)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_p_i_d}{PID} gains. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{class_p_i_d_a69017b1132f119265789b953089f50c8}{get\+\_\+info}} ()
+\begin{DoxyCompactList}\small\item\em Get information about the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_p_i_d_a5e144cee82e154b288b1e686496e7265}{kp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Proportional gain. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a3b53daa42c039a745773ccc60355feca}{ki\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integral gain. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a0f478b17184eb58251fd1e11298ed3d1}{kd\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Derivative gain. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a4dcc3c2d4d08a6f2a9d49eddc014b4d2}{target\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Target value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a47387e418840ac73105179bd78fc46e2}{output\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Output value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a4f2b466465723a101b75bc8e61fde6ad}{last\+\_\+error\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Last error value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_acf231017e75382f869ac88c8230a2646}{integral\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integral value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_p_i_d_a3630c443d73d49cf0428aefafe0acde4}{arrived\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the controller has arrived at the target. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_aaaf5487587cd782ccd6d5172284922f5}{tolerance\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Allowed error. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a94eaa82cab4f588cd36c0835956a2929}{max\+\_\+value\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Upper bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a7ae3179db91e4a0774c49243339aae83}{min\+\_\+value\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Lower bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} (if nonzero) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_aa64b624f650827f961cb6caa0f6bffc1}{activation\+\_\+threshold\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Activation threshold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_aa472223cc86f3dcd22c76abf9146b4c4}{integration\+\_\+threshold\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Integration threshold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a319397764dea109c0092c4d62f70dc86}{derivative\+\_\+threshold\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Derivative threshold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a38d9447aeee5b4ed24b4976107d63061}{max\+\_\+integral\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Maximum absolute value for the integral term. Also known as "{}\+I\+\_\+max"{}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_a8b8411e80eab0f2db86ddccc6c6f80be}{gamma\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Factor to decay (or “leak”) the integral term each timestep. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_p_i_d_a21a79f644697368fedd724109f06410e}{deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Flag for whether or not to use Clegg integration. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{class_p_i_d_a47c47dc686ba55925aef1a0364d38cf6}{limits\+\_\+pair\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Cached pair of doubles representing the limits (min\+\_\+value and max\+\_\+value). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_i_d_a0311b6f7de348499ce24e53ba353514a}\index{PID@{PID}!PID@{PID}}
+\index{PID@{PID}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_a0311b6f7de348499ce24e53ba353514a} 
+PID\+::\+PID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{class_p_i_d}{PID}. 
+
+constructor \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_ab3243d97576ba2f613d49c005a0c76c0}\index{PID@{PID}!PID@{PID}}
+\index{PID@{PID}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_ab3243d97576ba2f613d49c005a0c76c0} 
+PID\+::\+PID (\begin{DoxyParamCaption}\item[{double}]{kp}{, }\item[{double}]{ki}{, }\item[{double}]{kd}{, }\item[{double}]{target}{, }\item[{double}]{tolerance}{, }\item[{double}]{max\+\_\+value}{, }\item[{double}]{min\+\_\+value}{, }\item[{double}]{activation\+\_\+threshold}{, }\item[{double}]{integration\+\_\+threshold}{, }\item[{double}]{derivative\+\_\+threshold}{, }\item[{double}]{max\+\_\+integral}{, }\item[{double}]{gamma}{, }\item[{bool}]{deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_p_i_d}{PID}. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional gain \\
+\hline
+{\em ki} & Integral gain \\
+\hline
+{\em kd} & Derivative gain \\
+\hline
+{\em target} & Target value \\
+\hline
+{\em tolerance} & Allowed error \\
+\hline
+{\em max\+\_\+value} & Upper bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \\
+\hline
+{\em min\+\_\+value} & Lower bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} (if nonzero) \\
+\hline
+{\em activation\+\_\+threshold} & When \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} exceeds this, output is max\+\_\+value\+\_\+ with proper sign. Also known as "{}\+P\+\_\+threshold"{} \\
+\hline
+{\em integration\+\_\+threshold} & When \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} is above this, integral is not accumulated. Also known as "{}\+I\+\_\+threshold"{} \\
+\hline
+{\em derivative\+\_\+threshold} & When \texorpdfstring{$\vert$}{|}derivative\texorpdfstring{$\vert$}{|} exceeds this, the controller is not considered to have arrived. Also known as "{}\+D\+\_\+threshold"{} \\
+\hline
+{\em max\+\_\+integral} & Maximum absolute value for the integral term. Also known as "{}\+I\+\_\+max"{} \\
+\hline
+{\em gamma} & Factor to decay (or “leak”) the integral term each timestep. \\
+\hline
+{\em deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign} & Reset integral when error sign changes (see Clegg integrator). \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\href{https://en.wikipedia.org/wiki/Integral_windup\#Solutions}{\texttt{ Clegg Integrator}} 
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+All parameters are expected to be positive. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_i_d_aa24c4408da2ae9c05181c0799edc0471}\index{PID@{PID}!activation\_threshold@{activation\_threshold}}
+\index{activation\_threshold@{activation\_threshold}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{activation\_threshold()}{activation\_threshold()}}
+{\footnotesize\ttfamily \label{class_p_i_d_aa24c4408da2ae9c05181c0799edc0471} 
+const double \& PID\+::activation\+\_\+threshold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the activation threshold. 
+
+activation\+\_\+threshold \begin{DoxyReturn}{Returns}
+The activation threshold as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_afb58c9ded15b18307115077de08bad93}\index{PID@{PID}!arrived@{arrived}}
+\index{arrived@{arrived}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{arrived()}{arrived()}}
+{\footnotesize\ttfamily \label{class_p_i_d_afb58c9ded15b18307115077de08bad93} 
+bool PID\+::arrived (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the controller has arrived at the target. 
+
+arrived \begin{DoxyReturn}{Returns}
+True if the controller has arrived at the target, false otherwise.
+\end{DoxyReturn}
+This method checks if the controller has arrived at the target.
+
+arrived = (\texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} tolerance\+\_\+ \&\& \texorpdfstring{$\vert$}{|}derivative\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} derivative\+\_\+threshold\+\_\+). \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a805677b35cd486fc5e1f6ccf5098292f}\index{PID@{PID}!calculate@{calculate}}
+\index{calculate@{calculate}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a805677b35cd486fc5e1f6ccf5098292f} 
+double PID\+::calculate (\begin{DoxyParamCaption}\item[{double}]{current}{, }\item[{bool}]{limit}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Compute the \doxylink{class_p_i_d}{PID} output for the given current value. 
+
+calculate 
+\begin{DoxyParams}{Parameters}
+{\em current} & The current value. \\
+\hline
+{\em limit} & Whether to apply custom (non-\/traditional) \doxylink{class_p_i_d}{PID} calculations.\\
+\hline
+\end{DoxyParams}
+This method computes the \doxylink{class_p_i_d}{PID} output for the given current value.
+
+First, it calculates the error as the signed difference between the target and current values.
+
+If limit is false, then the output is calculated using the traditional \doxylink{class_p_i_d}{PID} formula\+:
+
+output = kp\+\_\+ \texorpdfstring{$\ast$}{*} error + ki\+\_\+ \texorpdfstring{$\ast$}{*} integral\+\_\+ + kd\+\_\+ \texorpdfstring{$\ast$}{*} derivative\+\_\+
+
+If limit is true, then the output is calculated using the custom \doxylink{class_p_i_d}{PID} procedure\+:
+
+
+\begin{DoxyItemize}
+\item If \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$>$}{>} activation\+\_\+threshold, output = max\+\_\+value\+\_\+ \texorpdfstring{$\ast$}{*} sign(error).
+\item If \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} activation\+\_\+threshold, output = kp\+\_\+ \texorpdfstring{$\ast$}{*} error.
+\item If \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} integration\+\_\+threshold, output += ki\+\_\+ \texorpdfstring{$\ast$}{*} integral\+\_\+.
+\item output += kd\+\_\+ \texorpdfstring{$\ast$}{*} derivative\+\_\+.
+\item If \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \texorpdfstring{$>$}{>} max\+\_\+value\+\_\+, output = max\+\_\+value\+\_\+ \texorpdfstring{$\ast$}{*} sign(output).
+\item If \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} min\+\_\+value\+\_\+, output = min\+\_\+value\+\_\+ \texorpdfstring{$\ast$}{*} sign(output).
+\end{DoxyItemize}
+
+Termination conditions are determined by the following\+:
+
+arrived\+\_\+ = (\texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} tolerance\+\_\+ \&\& \texorpdfstring{$\vert$}{|}derivative\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} derivative\+\_\+threshold\+\_\+). \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_aa44b5a3c369fc7c19e334cd6a2e6f35e}\index{PID@{PID}!derivative\_threshold@{derivative\_threshold}}
+\index{derivative\_threshold@{derivative\_threshold}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{derivative\_threshold()}{derivative\_threshold()}}
+{\footnotesize\ttfamily \label{class_p_i_d_aa44b5a3c369fc7c19e334cd6a2e6f35e} 
+const double \& PID\+::derivative\+\_\+threshold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the derivative threshold. 
+
+derivative\+\_\+threshold \begin{DoxyReturn}{Returns}
+The derivative threshold as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_aa0ee690896d579d1868df735bf606302}\index{PID@{PID}!gamma@{gamma}}
+\index{gamma@{gamma}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}}
+{\footnotesize\ttfamily \label{class_p_i_d_aa0ee690896d579d1868df735bf606302} 
+const double \& PID\+::gamma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the gamma value. 
+
+gamma \begin{DoxyReturn}{Returns}
+The gamma value as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a69017b1132f119265789b953089f50c8}\index{PID@{PID}!get\_info@{get\_info}}
+\index{get\_info@{get\_info}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{get\_info()}{get\_info()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a69017b1132f119265789b953089f50c8} 
+std\+::map$<$ std\+::string, double $>$ PID\+::get\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get information about the \doxylink{class_p_i_d}{PID} controller. 
+
+get\+\_\+info
+
+This method returns a map containing information about the \doxylink{class_p_i_d}{PID} controller\+:
+
+\{"{}\+P"{}\+: kp\+\_\+, "{}\+I"{}\+: ki\+\_\+, "{}\+D"{}\+: kd\+\_\+, "{}\+Output"{}\+: output\+\_\+\}
+
+\begin{DoxyNote}{Note}
+This method returns a map containing information about the \doxylink{class_p_i_d}{PID} controller\+:
+\end{DoxyNote}
+\{"{}\+P"{}\+: kp\+\_\+, "{}\+I"{}\+: ki\+\_\+, "{}\+D"{}\+: kd\+\_\+, "{}\+Output"{}\+: output\+\_\+\}
+
+\begin{DoxyReturn}{Returns}
+A map containing information about the \doxylink{class_p_i_d}{PID} controller\+: \{"{}\+P"{}\+: kp\+\_\+, "{}\+I"{}\+: ki\+\_\+, "{}\+D"{}\+: kd\+\_\+, "{}\+Output"{}\+: output\+\_\+\} 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a29b03660b75e6ea8a8481420d2d54de8}\index{PID@{PID}!integration\_threshold@{integration\_threshold}}
+\index{integration\_threshold@{integration\_threshold}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{integration\_threshold()}{integration\_threshold()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a29b03660b75e6ea8a8481420d2d54de8} 
+const double \& PID\+::integration\+\_\+threshold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the integration threshold. 
+
+integration\+\_\+threshold \begin{DoxyReturn}{Returns}
+The integration threshold as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a5b1a3f557a1aee5583239b1aa4a9fc42}\index{PID@{PID}!limits@{limits}}
+\index{limits@{limits}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{limits()}{limits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_a5b1a3f557a1aee5583239b1aa4a9fc42} 
+const std\+::pair$<$ double, double $>$ \& PID\+::limits (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the limits of the \doxylink{class_p_i_d}{PID} controller. 
+
+limits \begin{DoxyReturn}{Returns}
+A const reference to the pair of doubles representing the minimum and maximum limits. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_ae834d2b5f910209348eabfe2e442517e}\index{PID@{PID}!limits@{limits}}
+\index{limits@{limits}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{limits()}{limits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_ae834d2b5f910209348eabfe2e442517e} 
+std\+::pair$<$ double, double $>$ \& PID\+::limits (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+min}{, }\item[{double}]{new\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+
+Set the limits of the \doxylink{class_p_i_d}{PID} controller. 
+
+limits 
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+min} & The new minimum limit. \\
+\hline
+{\em new\+\_\+max} & The new maximum limit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/const reference to the pair of doubles representing the limits. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_a427e9a258eeb9785067de4db03b7c16f}\index{PID@{PID}!max\_integral@{max\_integral}}
+\index{max\_integral@{max\_integral}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{max\_integral()}{max\_integral()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a427e9a258eeb9785067de4db03b7c16f} 
+const double \& PID\+::max\+\_\+integral (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the maximum integral value. 
+
+max\+\_\+integral \begin{DoxyReturn}{Returns}
+The maximum integral value as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a1b16e043f1fb82a18398cbb6992f643b}\index{PID@{PID}!max\_value@{max\_value}}
+\index{max\_value@{max\_value}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{max\_value()}{max\_value()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a1b16e043f1fb82a18398cbb6992f643b} 
+const double \& PID\+::max\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the maximum value. 
+
+max\+\_\+value \begin{DoxyReturn}{Returns}
+The maximum value as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a3eb8bfc03fdf698a0e4827b453466742}\index{PID@{PID}!min\_value@{min\_value}}
+\index{min\_value@{min\_value}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{min\_value()}{min\_value()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a3eb8bfc03fdf698a0e4827b453466742} 
+const double \& PID\+::min\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the minimum value. 
+
+min\+\_\+value \begin{DoxyReturn}{Returns}
+The minimum value as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530}\index{PID@{PID}!reset@{reset}}
+\index{reset@{reset}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_p_i_d_af9677e76cb1beffbcf3f54cbc627c530} 
+void PID\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the \doxylink{class_p_i_d}{PID} controller. 
+
+reset
+
+This method resets the \doxylink{class_p_i_d}{PID} controller to its initial state with integral set to 0. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a4cd41c5442fe3d89262ae39ad3811dac}\index{PID@{PID}!set\_gains@{set\_gains}}
+\index{set\_gains@{set\_gains}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_gains()}{set\_gains()}}
+{\footnotesize\ttfamily \label{class_p_i_d_a4cd41c5442fe3d89262ae39ad3811dac} 
+void PID\+::set\+\_\+gains (\begin{DoxyParamCaption}\item[{double}]{kp}{, }\item[{double}]{ki}{, }\item[{double}]{kd}{}\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{class_p_i_d}{PID} gains. 
+
+set\+\_\+gains 
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional gain \\
+\hline
+{\em ki} & Integral gain \\
+\hline
+{\em kd} & Derivative gain \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_ae8a7a3a7cf1fed7e6f30a08b7305b126}\index{PID@{PID}!target@{target}}
+\index{target@{target}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_ae8a7a3a7cf1fed7e6f30a08b7305b126} 
+const double \& PID\+::target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the target value. 
+
+target \begin{DoxyReturn}{Returns}
+The target value as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_ab1a98d67845b26aeb54c78d2c106d25b}\index{PID@{PID}!target@{target}}
+\index{target@{target}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_p_i_d_ab1a98d67845b26aeb54c78d2c106d25b} 
+double \& PID\+::target (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+target}{}\end{DoxyParamCaption})}
+
+
+
+Set the target value. 
+
+target 
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+target} & The new target value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/const reference to the newly set target value. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_afe9d0dc598ee048fc2b0d631888f8674}\index{PID@{PID}!tolerance@{tolerance}}
+\index{tolerance@{tolerance}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{tolerance()}{tolerance()}}
+{\footnotesize\ttfamily \label{class_p_i_d_afe9d0dc598ee048fc2b0d631888f8674} 
+const double \& PID\+::tolerance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the deactivate integral on error sign flag. 
+
+deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign \begin{DoxyReturn}{Returns}
+The deactivate integral on error sign flag as a const reference. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_p_i_d_aa64b624f650827f961cb6caa0f6bffc1}\index{PID@{PID}!activation\_threshold\_@{activation\_threshold\_}}
+\index{activation\_threshold\_@{activation\_threshold\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{activation\_threshold\_}{activation\_threshold\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_aa64b624f650827f961cb6caa0f6bffc1} 
+double PID\+::activation\+\_\+threshold\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Activation threshold. 
+
+activation\+\_\+threshold\+\_\+
+
+When \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} exceeds this, output is max\+\_\+value\+\_\+ with proper sign. Also known as "{}\+P\+\_\+threshold"{} \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a3630c443d73d49cf0428aefafe0acde4}\index{PID@{PID}!arrived\_@{arrived\_}}
+\index{arrived\_@{arrived\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{arrived\_}{arrived\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a3630c443d73d49cf0428aefafe0acde4} 
+bool PID\+::arrived\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if the controller has arrived at the target. 
+
+arrived\+\_\+
+
+arrived\+\_\+ = (\texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} tolerance\+\_\+ \&\& \texorpdfstring{$\vert$}{|}derivative\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} derivative\+\_\+threshold\+\_\+). \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a21a79f644697368fedd724109f06410e}\index{PID@{PID}!deactivate\_integral\_on\_error\_sign\_@{deactivate\_integral\_on\_error\_sign\_}}
+\index{deactivate\_integral\_on\_error\_sign\_@{deactivate\_integral\_on\_error\_sign\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{deactivate\_integral\_on\_error\_sign\_}{deactivate\_integral\_on\_error\_sign\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a21a79f644697368fedd724109f06410e} 
+bool PID\+::deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag for whether or not to use Clegg integration. 
+
+deactivate\+\_\+integral\+\_\+on\+\_\+error\+\_\+sign\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a319397764dea109c0092c4d62f70dc86}\index{PID@{PID}!derivative\_threshold\_@{derivative\_threshold\_}}
+\index{derivative\_threshold\_@{derivative\_threshold\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{derivative\_threshold\_}{derivative\_threshold\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a319397764dea109c0092c4d62f70dc86} 
+double PID\+::derivative\+\_\+threshold\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Derivative threshold. 
+
+derivative\+\_\+threshold\+\_\+
+
+When \texorpdfstring{$\vert$}{|}derivative\texorpdfstring{$\vert$}{|} exceeds this, the controller is not considered to have arrived. Also known as "{}\+D\+\_\+threshold"{} \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a8b8411e80eab0f2db86ddccc6c6f80be}\index{PID@{PID}!gamma\_@{gamma\_}}
+\index{gamma\_@{gamma\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{gamma\_}{gamma\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a8b8411e80eab0f2db86ddccc6c6f80be} 
+double PID\+::gamma\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Factor to decay (or “leak”) the integral term each timestep. 
+
+gamma\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_acf231017e75382f869ac88c8230a2646}\index{PID@{PID}!integral\_@{integral\_}}
+\index{integral\_@{integral\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{integral\_}{integral\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_acf231017e75382f869ac88c8230a2646} 
+double PID\+::integral\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integral value. 
+
+integral\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_aa472223cc86f3dcd22c76abf9146b4c4}\index{PID@{PID}!integration\_threshold\_@{integration\_threshold\_}}
+\index{integration\_threshold\_@{integration\_threshold\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{integration\_threshold\_}{integration\_threshold\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_aa472223cc86f3dcd22c76abf9146b4c4} 
+double PID\+::integration\+\_\+threshold\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integration threshold. 
+
+integration\+\_\+threshold\+\_\+
+
+When \texorpdfstring{$\vert$}{|}error\texorpdfstring{$\vert$}{|} is above this, integral is not accumulated. Also known as "{}\+I\+\_\+threshold"{} \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a0f478b17184eb58251fd1e11298ed3d1}\index{PID@{PID}!kd\_@{kd\_}}
+\index{kd\_@{kd\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{kd\_}{kd\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a0f478b17184eb58251fd1e11298ed3d1} 
+double PID\+::kd\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Derivative gain. 
+
+kd\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a3b53daa42c039a745773ccc60355feca}\index{PID@{PID}!ki\_@{ki\_}}
+\index{ki\_@{ki\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{ki\_}{ki\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a3b53daa42c039a745773ccc60355feca} 
+double PID\+::ki\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integral gain. 
+
+ki\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a5e144cee82e154b288b1e686496e7265}\index{PID@{PID}!kp\_@{kp\_}}
+\index{kp\_@{kp\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{kp\_}{kp\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a5e144cee82e154b288b1e686496e7265} 
+double PID\+::kp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Proportional gain. 
+
+kp\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a4f2b466465723a101b75bc8e61fde6ad}\index{PID@{PID}!last\_error\_@{last\_error\_}}
+\index{last\_error\_@{last\_error\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{last\_error\_}{last\_error\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a4f2b466465723a101b75bc8e61fde6ad} 
+double PID\+::last\+\_\+error\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last error value. 
+
+last\+\_\+error\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a47c47dc686ba55925aef1a0364d38cf6}\index{PID@{PID}!limits\_pair\_@{limits\_pair\_}}
+\index{limits\_pair\_@{limits\_pair\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{limits\_pair\_}{limits\_pair\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a47c47dc686ba55925aef1a0364d38cf6} 
+std\+::pair$<$double, double$>$ PID\+::limits\+\_\+pair\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cached pair of doubles representing the limits (min\+\_\+value and max\+\_\+value). 
+
+limits\+\_\+pair\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a38d9447aeee5b4ed24b4976107d63061}\index{PID@{PID}!max\_integral\_@{max\_integral\_}}
+\index{max\_integral\_@{max\_integral\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{max\_integral\_}{max\_integral\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a38d9447aeee5b4ed24b4976107d63061} 
+double PID\+::max\+\_\+integral\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum absolute value for the integral term. Also known as "{}\+I\+\_\+max"{}. 
+
+max\+\_\+integral\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a94eaa82cab4f588cd36c0835956a2929}\index{PID@{PID}!max\_value\_@{max\_value\_}}
+\index{max\_value\_@{max\_value\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{max\_value\_}{max\_value\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a94eaa82cab4f588cd36c0835956a2929} 
+double PID\+::max\+\_\+value\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Upper bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|}. 
+
+max\+\_\+value\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a7ae3179db91e4a0774c49243339aae83}\index{PID@{PID}!min\_value\_@{min\_value\_}}
+\index{min\_value\_@{min\_value\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{min\_value\_}{min\_value\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a7ae3179db91e4a0774c49243339aae83} 
+double PID\+::min\+\_\+value\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lower bound on \texorpdfstring{$\vert$}{|}output\texorpdfstring{$\vert$}{|} (if nonzero) 
+
+min\+\_\+value\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a47387e418840ac73105179bd78fc46e2}\index{PID@{PID}!output\_@{output\_}}
+\index{output\_@{output\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{output\_}{output\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a47387e418840ac73105179bd78fc46e2} 
+double PID\+::output\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output value. 
+
+output\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_a4dcc3c2d4d08a6f2a9d49eddc014b4d2}\index{PID@{PID}!target\_@{target\_}}
+\index{target\_@{target\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{target\_}{target\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_a4dcc3c2d4d08a6f2a9d49eddc014b4d2} 
+double PID\+::target\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Target value. 
+
+target\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+\Hypertarget{class_p_i_d_aaaf5487587cd782ccd6d5172284922f5}\index{PID@{PID}!tolerance\_@{tolerance\_}}
+\index{tolerance\_@{tolerance\_}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{tolerance\_}{tolerance\_}}
+{\footnotesize\ttfamily \label{class_p_i_d_aaaf5487587cd782ccd6d5172284922f5} 
+double PID\+::tolerance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Allowed error. 
+
+tolerance\+\_\+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2pid_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/pid.\+hpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{pid_8hpp}{pid.\+hpp}}\end{DoxyCompactItemize}

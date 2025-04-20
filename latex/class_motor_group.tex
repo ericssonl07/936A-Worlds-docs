@@ -1,0 +1,477 @@
+\doxysection{Motor\+Group Class Reference}
+\hypertarget{class_motor_group}{}\label{class_motor_group}\index{MotorGroup@{MotorGroup}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motor_group_a79f2df55a8439050a7181583fce66c6e}{Motor\+Group}} (double \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\+\_\+ratio}}, double \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\+\_\+radius}}, \mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}motor)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_motor_group}{Motor\+Group} class. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{class_motor_group_aa0b8f4191d81f34825c54f6c4891bbb9}{Motor\+Group}} (double \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\+\_\+ratio}}, double \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\+\_\+radius}}, \mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}motor, Args... args)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_motor_group}{Motor\+Group} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor}{Motor}} \& \mbox{\hyperlink{class_motor_group_a1f80d62dde6373cdfc97b4fcb285ff94}{operator\mbox{[}$\,$\mbox{]}}} (int idx) const
+\begin{DoxyCompactList}\small\item\em Access a motor in the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}{spin}} (double velocity)
+\begin{DoxyCompactList}\small\item\em Spin all motors in the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_ad29112456e52576b9058526b1786c2c5}{spin}} (double power, vex\+::percent\+Units units)
+\begin{DoxyCompactList}\small\item\em Spin all motors in the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_a89106fe50de4a18be1ae942c73a8de63}{spin}} (double voltage, vex\+::voltage\+Units units)
+\begin{DoxyCompactList}\small\item\em Spin all motors in the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_a9891330c66bdd08bbda215cfc9975331}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the position of all motors in the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_a336075ad006fa2c4c31caed0c471b2c1}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop all motors in the group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_motor_group_a75d6d643d0af173837f01b89625731a5}{connected}} () const
+\begin{DoxyCompactList}\small\item\em Check the connection status of all motors in the group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_motor_group_aade22b14524c31affed615ce48ab0c86}{number\+\_\+connected}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of connected motors in the group. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_group_ac4d700ca8967c81a867b4fdcf247c1a9}{device\+\_\+position}} (vex\+::rotation\+Units units) const
+\begin{DoxyCompactList}\small\item\em Get the average raw position of all motors in the group. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_group_ae7d1826c0acdc9efcb4e7c5f2a8d6c92}{wheel\+\_\+position}} (vex\+::rotation\+Units units) const
+\begin{DoxyCompactList}\small\item\em Get the average wheel position of all motors in the group. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_group_aa1b0ca001c79706c9766cb8426d3bf7d}{max\+\_\+wheel\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum wheel velocity of the first motor in the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_motor_group_a39c1978503615a6439b02c39914aea7b}{motors}}
+\begin{DoxyCompactList}\small\item\em Vector of motors in the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_motor_group_a4b4b2f6329f915320281f3f78f0e9614}{gear\+\_\+ratio}} (vex\+::gear\+Setting gears)
+\begin{DoxyCompactList}\small\item\em Get the gear ratio of the motor cartridge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_group_af630068366d4470af43b648c6c120443}{add\+\_\+motor}} (\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}motor)
+\begin{DoxyCompactList}\small\item\em Add a motor to the group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_motor_group_a45e2a8974ad9a79b2bd664fca4aed6b7}{add\+\_\+motor}} (\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}motor, Args... args)
+\begin{DoxyCompactList}\small\item\em Add multiple motors to the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7}{cartridge\+\_\+ratio}}
+\begin{DoxyCompactList}\small\item\em Gear ratio of the motor cartridge. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}{external\+\_\+ratio}}
+\begin{DoxyCompactList}\small\item\em External gear ratio of the robot\textquotesingle{}s motors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em Radius of the robot\textquotesingle{}s wheels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2chassis_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/chassis.\+hpp}}, and \mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_motor_group_a79f2df55a8439050a7181583fce66c6e}\index{MotorGroup@{MotorGroup}!MotorGroup@{MotorGroup}}
+\index{MotorGroup@{MotorGroup}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{MotorGroup()}{MotorGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_motor_group_a79f2df55a8439050a7181583fce66c6e} 
+Motor\+Group\+::\+Motor\+Group (\begin{DoxyParamCaption}\item[{double}]{external\+\_\+ratio}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}}]{motor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_motor_group}{Motor\+Group} class. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em external\+\_\+ratio} & External gear ratio of the robot\textquotesingle{}s motors \\
+\hline
+{\em wheel\+\_\+radius} & Radius of the robot\textquotesingle{}s wheels \\
+\hline
+{\em motor} & \doxylink{class_motor}{Motor} to add to the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is used to create a \doxylink{class_motor_group}{Motor\+Group} with a single motor. It is a specialized constructor for the case where only one motor is provided. 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+Motors should be coupled, with equal external ratios and wheel radii. 
+\end{DoxyAttention}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_aa0b8f4191d81f34825c54f6c4891bbb9}\index{MotorGroup@{MotorGroup}!MotorGroup@{MotorGroup}}
+\index{MotorGroup@{MotorGroup}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{MotorGroup()}{MotorGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_motor_group_aa0b8f4191d81f34825c54f6c4891bbb9} 
+template$<$typename... Args$>$ \\
+Motor\+Group\+::\+Motor\+Group (\begin{DoxyParamCaption}\item[{double}]{external\+\_\+ratio}{, }\item[{double}]{wheel\+\_\+radius}{, }\item[{\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}}]{motor}{, }\item[{Args...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_motor_group}{Motor\+Group} class. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em external\+\_\+ratio} & External gear ratio of the robot\textquotesingle{}s motors \\
+\hline
+{\em wheel\+\_\+radius} & Radius of the robot\textquotesingle{}s wheels \\
+\hline
+{\em motor} & \doxylink{class_motor}{Motor} to add to the group \\
+\hline
+{\em args} & Additional motors to add to the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is used to create a \doxylink{class_motor_group}{Motor\+Group} with multiple motors. It is a template constructor that takes a variable number of motors as arguments. 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+Motors should be coupled, with equal external ratios and wheel radii. 
+\end{DoxyAttention}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_motor_group_af630068366d4470af43b648c6c120443}\index{MotorGroup@{MotorGroup}!add\_motor@{add\_motor}}
+\index{add\_motor@{add\_motor}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{add\_motor()}{add\_motor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_motor_group_af630068366d4470af43b648c6c120443} 
+void Motor\+Group\+::add\+\_\+motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}}]{motor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Add a motor to the group. 
+
+add\+\_\+motor 
+\begin{DoxyParams}{Parameters}
+{\em motor} & \doxylink{class_motor}{Motor} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method is used internally to add motors to the group. It is a specialized method of the template variant that takes a single motor as an argument. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a45e2a8974ad9a79b2bd664fca4aed6b7}\index{MotorGroup@{MotorGroup}!add\_motor@{add\_motor}}
+\index{add\_motor@{add\_motor}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{add\_motor()}{add\_motor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_motor_group_a45e2a8974ad9a79b2bd664fca4aed6b7} 
+template$<$typename... Args$>$ \\
+void Motor\+Group\+::add\+\_\+motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor}{Motor}} \texorpdfstring{$\ast$}{*}}]{motor}{, }\item[{Args...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Add multiple motors to the group. 
+
+add\+\_\+motor 
+\begin{DoxyParams}{Parameters}
+{\em motor} & \doxylink{class_motor}{Motor} to add \\
+\hline
+{\em args} & Additional motors to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method is used internally to add multiple motors to the group. 
+\end{DoxyNote}
+\Hypertarget{class_motor_group_a75d6d643d0af173837f01b89625731a5}\index{MotorGroup@{MotorGroup}!connected@{connected}}
+\index{connected@{connected}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
+{\footnotesize\ttfamily \label{class_motor_group_a75d6d643d0af173837f01b89625731a5} 
+int Motor\+Group\+::connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check the connection status of all motors in the group. 
+
+connected \begin{DoxyReturn}{Returns}
+An integer representing the connection status of each motor in the group in its bits 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_ac4d700ca8967c81a867b4fdcf247c1a9}\index{MotorGroup@{MotorGroup}!device\_position@{device\_position}}
+\index{device\_position@{device\_position}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{device\_position()}{device\_position()}}
+{\footnotesize\ttfamily \label{class_motor_group_ac4d700ca8967c81a867b4fdcf247c1a9} 
+double Motor\+Group\+::device\+\_\+position (\begin{DoxyParamCaption}\item[{vex\+::rotation\+Units}]{units}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the average raw position of all motors in the group. 
+
+device\+\_\+position 
+\begin{DoxyParams}{Parameters}
+{\em units} & Units of the position (degrees, radians, etc.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Motors should have been reset at the same time, or else this reading is meaningless. 
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+The average raw position of all motors in the group in the specified units 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a4b4b2f6329f915320281f3f78f0e9614}\index{MotorGroup@{MotorGroup}!gear\_ratio@{gear\_ratio}}
+\index{gear\_ratio@{gear\_ratio}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{gear\_ratio()}{gear\_ratio()}}
+{\footnotesize\ttfamily \label{class_motor_group_a4b4b2f6329f915320281f3f78f0e9614} 
+double Motor\+Group\+::gear\+\_\+ratio (\begin{DoxyParamCaption}\item[{vex\+::gear\+Setting}]{gears}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Get the gear ratio of the motor cartridge. 
+
+gear\+\_\+ratio 
+\begin{DoxyParams}{Parameters}
+{\em gears} & Gear setting of the motor cartridge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The gear ratio is one of the following\+:
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item 1/6\+: blue cartridge
+\item 1/18\+: green cartridge
+\item 1/36\+: red cartridge \begin{DoxyReturn}{Returns}
+The gear ratio of the motor cartridge 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_aa1b0ca001c79706c9766cb8426d3bf7d}\index{MotorGroup@{MotorGroup}!max\_wheel\_velocity@{max\_wheel\_velocity}}
+\index{max\_wheel\_velocity@{max\_wheel\_velocity}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{max\_wheel\_velocity()}{max\_wheel\_velocity()}}
+{\footnotesize\ttfamily \label{class_motor_group_aa1b0ca001c79706c9766cb8426d3bf7d} 
+double Motor\+Group\+::max\+\_\+wheel\+\_\+velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the maximum wheel velocity of the first motor in the group. 
+
+max\+\_\+wheel\+\_\+velocity \begin{DoxyNote}{Note}
+Since all motors are coupled with the same external ratio, cartridge, and wheel radius, the maximum wheel velocity is the same for all motors. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The maximum wheel velocity of the first motor in the group 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_aade22b14524c31affed615ce48ab0c86}\index{MotorGroup@{MotorGroup}!number\_connected@{number\_connected}}
+\index{number\_connected@{number\_connected}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{number\_connected()}{number\_connected()}}
+{\footnotesize\ttfamily \label{class_motor_group_aade22b14524c31affed615ce48ab0c86} 
+int Motor\+Group\+::number\+\_\+connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of connected motors in the group. 
+
+number\+\_\+connected \begin{DoxyReturn}{Returns}
+The number of connected motors in the group 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a1f80d62dde6373cdfc97b4fcb285ff94}\index{MotorGroup@{MotorGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{class_motor_group_a1f80d62dde6373cdfc97b4fcb285ff94} 
+\mbox{\hyperlink{class_motor}{Motor}} \& Motor\+Group\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{idx}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access a motor in the group. 
+
+operator\mbox{[}\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em idx} & Index of the motor to access \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the specified motor in the group 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a9891330c66bdd08bbda215cfc9975331}\index{MotorGroup@{MotorGroup}!reset@{reset}}
+\index{reset@{reset}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_motor_group_a9891330c66bdd08bbda215cfc9975331} 
+void Motor\+Group\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset the position of all motors in the group. 
+
+reset \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_ad29112456e52576b9058526b1786c2c5}\index{MotorGroup@{MotorGroup}!spin@{spin}}
+\index{spin@{spin}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_motor_group_ad29112456e52576b9058526b1786c2c5} 
+void Motor\+Group\+::spin (\begin{DoxyParamCaption}\item[{double}]{power}{, }\item[{vex\+::percent\+Units}]{units}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Spin all motors in the group. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em power} & Power to spin the motors at (percentage of maximum power) \\
+\hline
+{\em units} & Units of the power (percentage or voltage) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Motors should be coupled, with equal external ratios and wheel radii. 
+\end{DoxyAttention}
+\Hypertarget{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9}\index{MotorGroup@{MotorGroup}!spin@{spin}}
+\index{spin@{spin}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_motor_group_a9c29abc52b67875fc42ce3bfc7a0ecf9} 
+void Motor\+Group\+::spin (\begin{DoxyParamCaption}\item[{double}]{velocity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Spin all motors in the group. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em velocity} & Velocity to spin the motors at (in/s external tangential velocity) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Motors should be coupled, with equal external ratios and wheel radii. 
+\end{DoxyAttention}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a89106fe50de4a18be1ae942c73a8de63}\index{MotorGroup@{MotorGroup}!spin@{spin}}
+\index{spin@{spin}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_motor_group_a89106fe50de4a18be1ae942c73a8de63} 
+void Motor\+Group\+::spin (\begin{DoxyParamCaption}\item[{double}]{voltage}{, }\item[{vex\+::voltage\+Units}]{units}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Spin all motors in the group. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em voltage} & Voltage to spin the motors at (volts) \\
+\hline
+{\em units} & Units of the voltage (volts or percentage) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Motors should be coupled, with equal external ratios and wheel radii. 
+\end{DoxyAttention}
+\Hypertarget{class_motor_group_a336075ad006fa2c4c31caed0c471b2c1}\index{MotorGroup@{MotorGroup}!stop@{stop}}
+\index{stop@{stop}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_motor_group_a336075ad006fa2c4c31caed0c471b2c1} 
+void Motor\+Group\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop all motors in the group. 
+
+stop \begin{DoxyNote}{Note}
+This method stops all motors in the group immediately and locks them. It uses vex\+::brake\+Type\+::brake to stop the motors. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_ae7d1826c0acdc9efcb4e7c5f2a8d6c92}\index{MotorGroup@{MotorGroup}!wheel\_position@{wheel\_position}}
+\index{wheel\_position@{wheel\_position}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{wheel\_position()}{wheel\_position()}}
+{\footnotesize\ttfamily \label{class_motor_group_ae7d1826c0acdc9efcb4e7c5f2a8d6c92} 
+double Motor\+Group\+::wheel\+\_\+position (\begin{DoxyParamCaption}\item[{vex\+::rotation\+Units}]{units}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the average wheel position of all motors in the group. 
+
+wheel\+\_\+position 
+\begin{DoxyParams}{Parameters}
+{\em units} & Units of the position (degrees, radians, etc.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Motors should have been reset at the same time, or else this reading is meaningless. 
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+The average wheel position of all motors in the group in the specified units 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7}\index{MotorGroup@{MotorGroup}!cartridge\_ratio@{cartridge\_ratio}}
+\index{cartridge\_ratio@{cartridge\_ratio}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{cartridge\_ratio}{cartridge\_ratio}}
+{\footnotesize\ttfamily \label{class_motor_group_a42a146029bfef1ad3a6da280b806f4e7} 
+double Motor\+Group\+::cartridge\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gear ratio of the motor cartridge. 
+
+cartridge\+\_\+ratio \begin{DoxyNote}{Note}
+The cartridge ratio is one of the following\+:
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item 1/6\+: blue cartridge
+\item 1/18\+: green cartridge
+\item 1/36\+: red cartridge 
+\end{DoxyItemize}\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca}\index{MotorGroup@{MotorGroup}!external\_ratio@{external\_ratio}}
+\index{external\_ratio@{external\_ratio}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{external\_ratio}{external\_ratio}}
+{\footnotesize\ttfamily \label{class_motor_group_a885408a7cb0629bf077fa65f03ef0bca} 
+double Motor\+Group\+::external\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+External gear ratio of the robot\textquotesingle{}s motors. 
+
+external\+\_\+ratio \begin{DoxyNote}{Note}
+The external gear ratio is the ratio of the number of teeth on the driven gear to the number of teeth on the driving gear. This value is used to calculate the speed and torque of the motors. The gear ratio is given as the ratio of output spin to input spin. For instance, if the motor spins 6 times for every 1 turn of the wheel, the external ratio should be set to 1/6 as the external wheel turns 1/6 times for every 1 turn of the shaft. There is no need to account for the cartridge, which vex\+::motor does automatically. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a39c1978503615a6439b02c39914aea7b}\index{MotorGroup@{MotorGroup}!motors@{motors}}
+\index{motors@{motors}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{motors}{motors}}
+{\footnotesize\ttfamily \label{class_motor_group_a39c1978503615a6439b02c39914aea7b} 
+std\+::vector$<$\mbox{\hyperlink{class_motor}{Motor}}\texorpdfstring{$\ast$}{*}$>$ Motor\+Group\+::motors}
+
+
+
+Vector of motors in the group. 
+
+motors \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_group_a6d896e959eb2368cd87d7a984c134e70}\index{MotorGroup@{MotorGroup}!wheel\_radius@{wheel\_radius}}
+\index{wheel\_radius@{wheel\_radius}!MotorGroup@{MotorGroup}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius}{wheel\_radius}}
+{\footnotesize\ttfamily \label{class_motor_group_a6d896e959eb2368cd87d7a984c134e70} 
+double Motor\+Group\+::wheel\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radius of the robot\textquotesingle{}s wheels. 
+
+wheel\+\_\+radius \begin{DoxyNote}{Note}
+The wheel radius is the distance from the center of the wheel to its outer edge, in inches. The official VEX radius is not the exact radius of the wheel; it\textquotesingle{}s recommended to measure the radius of the wheel with a caliper. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{motor__group_8hpp}{motor\+\_\+group.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,27 @@
+\doxysection{include/pursuit.hpp File Reference}
+\hypertarget{pursuit_8hpp}{}\label{pursuit_8hpp}\index{include/pursuit.hpp@{include/pursuit.hpp}}
+
+
+This class implements a pure pursuit algorithm for path following in robotics.  
+
+
+{\ttfamily \#include $<$path.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pursuit}{Pursuit}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements a pure pursuit algorithm for path following in robotics. 
+
+\begin{DoxyAuthor}{Author}
+@ericssonl07 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/20
+\end{DoxyDate}
+The \doxylink{class_pursuit}{Pursuit} class is designed to follow a given path using the pure pursuit algorithm. It calculates the target point on the path based on the robot\textquotesingle{}s current position and orientation. Then, based on the relative position of the target point and the robot\textquotesingle{}s orientation and geometry, it calculates the steering angle required to follow the path in the form of a pair of left/right voltages. Additionally, \doxylink{class_pursuit}{Pursuit} provides the radius of the osculating circle to the target point, which can be used for dynamic velocity control based on centripetal acceleration. 

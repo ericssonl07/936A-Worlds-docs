@@ -1,0 +1,179 @@
+\doxysection{Cubic\+Spline Class Reference}
+\hypertarget{class_cubic_spline}{}\label{class_cubic_spline}\index{CubicSpline@{CubicSpline}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_cubic_spline_ac44e4865ce219c8e14d2a617c7bca21f}{get\+\_\+segment}} (double of)
+\begin{DoxyCompactList}\small\item\em Get the index of the segment for a given x value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b}{Cubic\+Spline}} (std\+::vector$<$ double $>$ x\+\_\+values, std\+::vector$<$ double $>$ y\+\_\+values)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_cubic_spline}{Cubic\+Spline}. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_cubic_spline_a8dce74f66d0da52efafc1c2058780839}{operator()}} (std\+::vector$<$ double $>$ values)
+\begin{DoxyCompactList}\small\item\em Evaluate the cubic spline at a given x value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ double $>$ \mbox{\hyperlink{class_cubic_spline_ac01b8a52279f025ac83db3ef099da0b2}{linspace}} (double start, double end, int point\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Generate a linearly spaced vector of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_cubic_spline_a3b5c00363b0edb2a56977d5a564606e1}{operations}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_matrix}{Matrix} of operations for representing the cubic spline system of equations. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} $>$ \mbox{\hyperlink{class_cubic_spline_a02fb35fffef4fb37a07c46e8412ff83f}{coefficients}}
+\begin{DoxyCompactList}\small\item\em Vector of cubic expressions representing the coefficients of the spline. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_cubic_spline_aff9a6a3d3daabebb817503e4f14391c8}{piecewise\+\_\+boundaries}}
+\begin{DoxyCompactList}\small\item\em Vector of piecewise boundaries for the cubic spline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cubic_spline_a4877239a6b7f09fbf5a61ca68a49d74c}\label{class_cubic_spline_a4877239a6b7f09fbf5a61ca68a49d74c} 
+class {\bfseries Path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b}\index{CubicSpline@{CubicSpline}!CubicSpline@{CubicSpline}}
+\index{CubicSpline@{CubicSpline}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{CubicSpline()}{CubicSpline()}}
+{\footnotesize\ttfamily \label{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b} 
+Cubic\+Spline\+::\+Cubic\+Spline (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x\+\_\+values}{, }\item[{std\+::vector$<$ double $>$}]{y\+\_\+values}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_cubic_spline}{Cubic\+Spline}. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+values} & The x-\/coordinates of the points used to construct the spline \\
+\hline
+{\em y\+\_\+values} & The y-\/coordinates of the points used to construct the spline\\
+\hline
+\end{DoxyParams}
+This constructor initializes the cubic spline with the specified x and y values. It constructs the spline by solving the system of equations for the cubic polynomials. 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::logic\+\_\+error} & if the x and y values are not of the same size \\
+\hline
+{\em std\+::logic\+\_\+error} & if the x values are not strictly increasing \\
+\hline
+{\em std\+::logic\+\_\+error} & if the x values are not unique \\
+\hline
+\end{DoxyExceptions}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cubic_spline_ac44e4865ce219c8e14d2a617c7bca21f}\index{CubicSpline@{CubicSpline}!get\_segment@{get\_segment}}
+\index{get\_segment@{get\_segment}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{get\_segment()}{get\_segment()}}
+{\footnotesize\ttfamily \label{class_cubic_spline_ac44e4865ce219c8e14d2a617c7bca21f} 
+int Cubic\+Spline\+::get\+\_\+segment (\begin{DoxyParamCaption}\item[{double}]{of}{}\end{DoxyParamCaption})}
+
+
+
+Get the index of the segment for a given x value. 
+
+get\+\_\+segment 
+\begin{DoxyParams}{Parameters}
+{\em of} & The x value to find the segment for\\
+\hline
+\end{DoxyParams}
+This method finds the index of the segment in which the specified x value lies. \begin{DoxyReturn}{Returns}
+The index of the segment. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+\Hypertarget{class_cubic_spline_ac01b8a52279f025ac83db3ef099da0b2}\index{CubicSpline@{CubicSpline}!linspace@{linspace}}
+\index{linspace@{linspace}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{linspace()}{linspace()}}
+{\footnotesize\ttfamily \label{class_cubic_spline_ac01b8a52279f025ac83db3ef099da0b2} 
+static std\+::vector$<$ double $>$ Cubic\+Spline\+::linspace (\begin{DoxyParamCaption}\item[{double}]{start}{, }\item[{double}]{end}{, }\item[{int}]{point\+\_\+count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Generate a linearly spaced vector of points. 
+
+linspace 
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting value of the range \\
+\hline
+{\em end} & The ending value of the range \\
+\hline
+{\em point\+\_\+count} & The number of points to generate\\
+\hline
+\end{DoxyParams}
+This method generates a linearly spaced vector of points between the specified start and end values. \begin{DoxyReturn}{Returns}
+A vector of doubles representing the linearly spaced points. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+\Hypertarget{class_cubic_spline_a8dce74f66d0da52efafc1c2058780839}\index{CubicSpline@{CubicSpline}!operator()@{operator()}}
+\index{operator()@{operator()}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{class_cubic_spline_a8dce74f66d0da52efafc1c2058780839} 
+std\+::vector$<$ double $>$ Cubic\+Spline\+::operator() (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate the cubic spline at a given x value. 
+
+operator() 
+\begin{DoxyParams}{Parameters}
+{\em values} & The x values to evaluate the spline at\\
+\hline
+\end{DoxyParams}
+This method evaluates the cubic spline at the specified x values. It returns a vector of y values corresponding to the input x values. \begin{DoxyReturn}{Returns}
+A vector of doubles representing the evaluated y values. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_cubic_spline_a02fb35fffef4fb37a07c46e8412ff83f}\index{CubicSpline@{CubicSpline}!coefficients@{coefficients}}
+\index{coefficients@{coefficients}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{coefficients}{coefficients}}
+{\footnotesize\ttfamily \label{class_cubic_spline_a02fb35fffef4fb37a07c46e8412ff83f} 
+std\+::vector$<$\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}}$>$ Cubic\+Spline\+::coefficients\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of cubic expressions representing the coefficients of the spline. 
+
+coefficients \Hypertarget{class_cubic_spline_a3b5c00363b0edb2a56977d5a564606e1}\index{CubicSpline@{CubicSpline}!operations@{operations}}
+\index{operations@{operations}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily \label{class_cubic_spline_a3b5c00363b0edb2a56977d5a564606e1} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Cubic\+Spline\+::operations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_matrix}{Matrix} of operations for representing the cubic spline system of equations. 
+
+operations \Hypertarget{class_cubic_spline_aff9a6a3d3daabebb817503e4f14391c8}\index{CubicSpline@{CubicSpline}!piecewise\_boundaries@{piecewise\_boundaries}}
+\index{piecewise\_boundaries@{piecewise\_boundaries}!CubicSpline@{CubicSpline}}
+\doxysubsubsection{\texorpdfstring{piecewise\_boundaries}{piecewise\_boundaries}}
+{\footnotesize\ttfamily \label{class_cubic_spline_aff9a6a3d3daabebb817503e4f14391c8} 
+std\+::vector$<$double$>$ Cubic\+Spline\+::piecewise\+\_\+boundaries\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of piecewise boundaries for the cubic spline. 
+
+piecewise\+\_\+boundaries
+
+The piecewise boundaries are the x-\/coordinates of the points used to construct the spline. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{path_8hpp}{path.\+hpp}}\end{DoxyCompactItemize}

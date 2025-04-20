@@ -1,0 +1,575 @@
+\doxysection{Motor Class Reference}
+\hypertarget{class_motor}{}\label{class_motor}\index{Motor@{Motor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_motor_aaefb1df7d67d32b9f959440fa8954464}{Motor}} (vex\+::motor \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_motor_a83a65c0490a978406edcc50303854cfd}{device}}, double \mbox{\hyperlink{class_motor_a559101c5e2e29fa4662701e4b6cd727b}{external\+\_\+ratio}}, double \mbox{\hyperlink{class_motor_a63249877de586f4ca5dfae1b9c8af64d}{wheel\+\_\+radius}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_ad824837c7b4460fe42aad352206dddf0}{Motor}} (int32\+\_\+t index, vex\+::gear\+Setting gears, bool reverse, double \mbox{\hyperlink{class_motor_a559101c5e2e29fa4662701e4b6cd727b}{external\+\_\+ratio}}, double \mbox{\hyperlink{class_motor_a63249877de586f4ca5dfae1b9c8af64d}{wheel\+\_\+radius}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_a9b44f2dd0d7ba41c0a2d4b4c1ba7e1b8}{Motor}} (const \mbox{\hyperlink{class_motor}{Motor}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_a2c4048a8328ef31adfe0a53abe8a2111}{Motor}} (\mbox{\hyperlink{class_motor}{Motor}} \&\&)
+\begin{DoxyCompactList}\small\item\em Move constructor for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor}{Motor}} \& \mbox{\hyperlink{class_motor_ac0e95c3eb1dd763c277fc48af9f57b1f}{operator=}} (const \mbox{\hyperlink{class_motor}{Motor}} \&)
+\begin{DoxyCompactList}\small\item\em Assignment operator for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor}{Motor}} \& \mbox{\hyperlink{class_motor_a83912a8c5a569b099fff153c02b51f42}{operator=}} (\mbox{\hyperlink{class_motor}{Motor}} \&\&)
+\begin{DoxyCompactList}\small\item\em Move assignment operator for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_motor_a2e57c7b2681efea1d3b7f253ee88ecd4}{\texorpdfstring{$\sim$}{\string~}\+Motor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_motor}{Motor} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_a0ec900d25b23b1e8e8afa996ee4addd5}{spin}} (double velocity)
+\begin{DoxyCompactList}\small\item\em Spin the motor at a specified velocity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_ada8ac2829858b613c36c85554fcb6487}{spin}} (double power, vex\+::percent\+Units units)
+\begin{DoxyCompactList}\small\item\em Spin the motor at a specified power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_ad59e32ee487ea41a6ad88a2e8e8764a6}{spin}} (double voltage, vex\+::voltage\+Units units)
+\begin{DoxyCompactList}\small\item\em Spin the motor at a specified voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_ab27054ad501206fafc0f4682473db698}{reset\+\_\+position}} ()
+\begin{DoxyCompactList}\small\item\em Reset the position of the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_a015fd5308d4d27e5dcf7f9ea3d5c03f6}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the motor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_motor_a2a425754dd37affe2225d728574357b4}{connected}} ()
+\begin{DoxyCompactList}\small\item\em Check if the motor is connected. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_afe1a90f5b9e05a8b2d0ff8112dd2350b}{device\+\_\+position}} (vex\+::rotation\+Units units) const
+\begin{DoxyCompactList}\small\item\em Get the raw position of the motor in specified units. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_ab5afd7f662225640701ea51e8f0ff110}{wheel\+\_\+position}} (vex\+::rotation\+Units units) const
+\begin{DoxyCompactList}\small\item\em Get the wheel position of the motor in specified units. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_a40f95968cd778f97f4b67ec52d37e713}{max\+\_\+wheel\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum wheel tangential velocity of the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_motor_a0406246fed3a10152a2838a9a09a8344}{spin\+\_\+to}} (double position, double tolerance=2.\+0, double maximum=12.\+0, double minimum=0.\+02, double activation\+\_\+ratio=0.\+3, double integral\+\_\+ratio=0.\+2, bool block=true)
+\begin{DoxyCompactList}\small\item\em Spin the motor to a specified position with specified parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vex\+::motor \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_motor_a83a65c0490a978406edcc50303854cfd}{device}}
+\begin{DoxyCompactList}\small\item\em VEX motor device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_motor_a313cf76fd53969d7e81f580bc6d844a5}{gear\+\_\+ratio}} (vex\+::gear\+Setting gears)
+\begin{DoxyCompactList}\small\item\em Get the gear ratio of the motor cartridge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_motor_af1bb2f19f0b8bf73405d3271ac0e930b}{cartridge\+\_\+ratio}}
+\begin{DoxyCompactList}\small\item\em Gear ratio of the motor cartridge. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_a559101c5e2e29fa4662701e4b6cd727b}{external\+\_\+ratio}}
+\begin{DoxyCompactList}\small\item\em External gear ratio of the motor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_a63249877de586f4ca5dfae1b9c8af64d}{wheel\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em Radius of the wheel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_motor_aa172ddd850f9d93e9175fadf094ce467}{spin\+\_\+to\+\_\+impl\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Variables for asynchronous spin\+\_\+to implementation. \end{DoxyCompactList}\item 
+\Hypertarget{class_motor_ab7aadb4fd39d204065364ebc769be06c}\label{class_motor_ab7aadb4fd39d204065364ebc769be06c} 
+double {\bfseries spin\+\_\+to\+\_\+impl\+\_\+tolerance}
+\item 
+\Hypertarget{class_motor_aa34574be902f575b9ffe09e3a5940255}\label{class_motor_aa34574be902f575b9ffe09e3a5940255} 
+double {\bfseries spin\+\_\+to\+\_\+impl\+\_\+maximum}
+\item 
+\Hypertarget{class_motor_a06b0ba020b822eeb6d57c8c2c8c3451f}\label{class_motor_a06b0ba020b822eeb6d57c8c2c8c3451f} 
+double {\bfseries spin\+\_\+to\+\_\+impl\+\_\+minimum}
+\item 
+\Hypertarget{class_motor_a57cd135445ef5e5a68b5478da4e02d40}\label{class_motor_a57cd135445ef5e5a68b5478da4e02d40} 
+double {\bfseries spin\+\_\+to\+\_\+impl\+\_\+activation\+\_\+ratio}
+\item 
+\Hypertarget{class_motor_a03497daed6fd23c5644a54513b665e25}\label{class_motor_a03497daed6fd23c5644a54513b665e25} 
+double {\bfseries spin\+\_\+to\+\_\+impl\+\_\+integral\+\_\+ratio}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const double \mbox{\hyperlink{class_motor_aa503be1374a35029fc30e241b4b2ff92}{max\+\_\+motor\+\_\+rpm}} = 3600
+\begin{DoxyCompactList}\small\item\em Maximum RPM of the motor-\/ equals 3600 rpm for a VEX V5 Smart \doxylink{class_motor}{Motor}. \end{DoxyCompactList}\item 
+static constexpr const double \mbox{\hyperlink{class_motor_a9e300f4731f6e4fae4b1f6d2a0523b3e}{max\+\_\+voltage}} = 12
+\begin{DoxyCompactList}\small\item\em Maximum voltage of the motor-\/ equals 12V for a VEX V5 Smart \doxylink{class_motor}{Motor}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_motor_a0c07c6fc0de66f5fa44f55afc996c3ab}{spin\+\_\+to\+\_\+impl}} (void \texorpdfstring{$\ast$}{*}instance)
+\begin{DoxyCompactList}\small\item\em Spin to a specified position with specified parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}, and \mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_group_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor\+\_\+group.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_motor_aaefb1df7d67d32b9f959440fa8954464}\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_motor_aaefb1df7d67d32b9f959440fa8954464} 
+Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{vex\+::motor \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{double}]{external\+\_\+ratio}{, }\item[{double}]{wheel\+\_\+radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_motor}{Motor} class. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the VEX motor device \\
+\hline
+{\em external\+\_\+ratio} & External gear ratio of the motor \\
+\hline
+{\em wheel\+\_\+radius} & Radius of the wheel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is used to create a \doxylink{class_motor}{Motor} object with a specified VEX motor device, external ratio, and wheel radius. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_ad824837c7b4460fe42aad352206dddf0}\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_motor_ad824837c7b4460fe42aad352206dddf0} 
+Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{index}{, }\item[{vex\+::gear\+Setting}]{gears}{, }\item[{bool}]{reverse}{, }\item[{double}]{external\+\_\+ratio}{, }\item[{double}]{wheel\+\_\+radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_motor}{Motor} class. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em index} & Port number of the motor \\
+\hline
+{\em gears} & Gear setting of the motor cartridge \\
+\hline
+{\em reverse} & Reverse direction of the motor \\
+\hline
+{\em external\+\_\+ratio} & External gear ratio of the motor \\
+\hline
+{\em wheel\+\_\+radius} & Radius of the wheel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is used to create a \doxylink{class_motor}{Motor} object with a specified port number, gear setting, reverse direction, external ratio, and wheel radius. 
+\end{DoxyNote}
+\Hypertarget{class_motor_a9b44f2dd0d7ba41c0a2d4b4c1ba7e1b8}\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_motor_a9b44f2dd0d7ba41c0a2d4b4c1ba7e1b8} 
+Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_motor}{Motor}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Copy constructor for the \doxylink{class_motor}{Motor} class. 
+
+constructor \Hypertarget{class_motor_a2c4048a8328ef31adfe0a53abe8a2111}\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_motor_a2c4048a8328ef31adfe0a53abe8a2111} 
+Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor}{Motor}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Move constructor for the \doxylink{class_motor}{Motor} class. 
+
+constructor \Hypertarget{class_motor_a2e57c7b2681efea1d3b7f253ee88ecd4}\index{Motor@{Motor}!````~Motor@{\texorpdfstring{$\sim$}{\string~}Motor}}
+\index{````~Motor@{\texorpdfstring{$\sim$}{\string~}Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Motor()}{\string~Motor()}}
+{\footnotesize\ttfamily \label{class_motor_a2e57c7b2681efea1d3b7f253ee88ecd4} 
+Motor\+::\texorpdfstring{$\sim$}{\string~}\+Motor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{class_motor}{Motor} class. 
+
+destructor \begin{DoxyNote}{Note}
+This destructor is used to clean up the resources used by the \doxylink{class_motor}{Motor} object. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_motor_a2a425754dd37affe2225d728574357b4}\index{Motor@{Motor}!connected@{connected}}
+\index{connected@{connected}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
+{\footnotesize\ttfamily \label{class_motor_a2a425754dd37affe2225d728574357b4} 
+bool Motor\+::connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the motor is connected. 
+
+connected \begin{DoxyReturn}{Returns}
+True if the motor is connected, false otherwise 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_afe1a90f5b9e05a8b2d0ff8112dd2350b}\index{Motor@{Motor}!device\_position@{device\_position}}
+\index{device\_position@{device\_position}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{device\_position()}{device\_position()}}
+{\footnotesize\ttfamily \label{class_motor_afe1a90f5b9e05a8b2d0ff8112dd2350b} 
+double Motor\+::device\+\_\+position (\begin{DoxyParamCaption}\item[{vex\+::rotation\+Units}]{units}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the raw position of the motor in specified units. 
+
+device\+\_\+position 
+\begin{DoxyParams}{Parameters}
+{\em units} & Units of the position (degrees, radians, etc.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The raw position of the motor in the specified units 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a313cf76fd53969d7e81f580bc6d844a5}\index{Motor@{Motor}!gear\_ratio@{gear\_ratio}}
+\index{gear\_ratio@{gear\_ratio}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{gear\_ratio()}{gear\_ratio()}}
+{\footnotesize\ttfamily \label{class_motor_a313cf76fd53969d7e81f580bc6d844a5} 
+double Motor\+::gear\+\_\+ratio (\begin{DoxyParamCaption}\item[{vex\+::gear\+Setting}]{gears}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the gear ratio of the motor cartridge. 
+
+gear\+\_\+ratio \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a40f95968cd778f97f4b67ec52d37e713}\index{Motor@{Motor}!max\_wheel\_velocity@{max\_wheel\_velocity}}
+\index{max\_wheel\_velocity@{max\_wheel\_velocity}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{max\_wheel\_velocity()}{max\_wheel\_velocity()}}
+{\footnotesize\ttfamily \label{class_motor_a40f95968cd778f97f4b67ec52d37e713} 
+double Motor\+::max\+\_\+wheel\+\_\+velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the maximum wheel tangential velocity of the motor. 
+
+max\+\_\+wheel\+\_\+velocity \begin{DoxyReturn}{Returns}
+The maximum wheel tangential velocity of the motor 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_ac0e95c3eb1dd763c277fc48af9f57b1f}\index{Motor@{Motor}!operator=@{operator=}}
+\index{operator=@{operator=}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_motor_ac0e95c3eb1dd763c277fc48af9f57b1f} 
+\mbox{\hyperlink{class_motor}{Motor}} \& Motor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_motor}{Motor}} \&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Assignment operator for the \doxylink{class_motor}{Motor} class. 
+
+assignment operator 
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_motor}{Motor} object to assign from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current object 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a83912a8c5a569b099fff153c02b51f42}\index{Motor@{Motor}!operator=@{operator=}}
+\index{operator=@{operator=}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_motor_a83912a8c5a569b099fff153c02b51f42} 
+\mbox{\hyperlink{class_motor}{Motor}} \& Motor\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_motor}{Motor}} \&\&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator for the \doxylink{class_motor}{Motor} class. 
+
+assignment operator 
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_motor}{Motor} object to assign from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current object 
+\end{DoxyReturn}
+\Hypertarget{class_motor_ab27054ad501206fafc0f4682473db698}\index{Motor@{Motor}!reset\_position@{reset\_position}}
+\index{reset\_position@{reset\_position}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{reset\_position()}{reset\_position()}}
+{\footnotesize\ttfamily \label{class_motor_ab27054ad501206fafc0f4682473db698} 
+void Motor\+::reset\+\_\+position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the position of the motor. 
+
+reset\+\_\+position \begin{DoxyNote}{Note}
+This method is used to reset the position of the motor to zero. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_ada8ac2829858b613c36c85554fcb6487}\index{Motor@{Motor}!spin@{spin}}
+\index{spin@{spin}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_motor_ada8ac2829858b613c36c85554fcb6487} 
+void Motor\+::spin (\begin{DoxyParamCaption}\item[{double}]{power}{, }\item[{vex\+::percent\+Units}]{units}{}\end{DoxyParamCaption})}
+
+
+
+Spin the motor at a specified power. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em power} & Power to spin the motor at (percentage of maximum power) \\
+\hline
+{\em units} & Units of the power (percentage or voltage) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method is used to spin the motor at a specified power. 
+\end{DoxyNote}
+\Hypertarget{class_motor_a0ec900d25b23b1e8e8afa996ee4addd5}\index{Motor@{Motor}!spin@{spin}}
+\index{spin@{spin}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_motor_a0ec900d25b23b1e8e8afa996ee4addd5} 
+void Motor\+::spin (\begin{DoxyParamCaption}\item[{double}]{velocity}{}\end{DoxyParamCaption})}
+
+
+
+Spin the motor at a specified velocity. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em velocity} & Velocity to spin the motor at (in/s external tangential velocity) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method is used to spin the motor at a specified velocity. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_ad59e32ee487ea41a6ad88a2e8e8764a6}\index{Motor@{Motor}!spin@{spin}}
+\index{spin@{spin}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin()}{spin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_motor_ad59e32ee487ea41a6ad88a2e8e8764a6} 
+void Motor\+::spin (\begin{DoxyParamCaption}\item[{double}]{voltage}{, }\item[{vex\+::voltage\+Units}]{units}{}\end{DoxyParamCaption})}
+
+
+
+Spin the motor at a specified voltage. 
+
+spin 
+\begin{DoxyParams}{Parameters}
+{\em voltage} & Voltage to spin the motor at (volts) \\
+\hline
+{\em units} & Units of the voltage (volts) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method is used to spin the motor at a specified voltage. 
+\end{DoxyNote}
+\Hypertarget{class_motor_a0406246fed3a10152a2838a9a09a8344}\index{Motor@{Motor}!spin\_to@{spin\_to}}
+\index{spin\_to@{spin\_to}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin\_to()}{spin\_to()}}
+{\footnotesize\ttfamily \label{class_motor_a0406246fed3a10152a2838a9a09a8344} 
+void Motor\+::spin\+\_\+to (\begin{DoxyParamCaption}\item[{double}]{position}{, }\item[{double}]{tolerance}{ = {\ttfamily 2.0}, }\item[{double}]{maximum}{ = {\ttfamily 12.0}, }\item[{double}]{minimum}{ = {\ttfamily 0.02}, }\item[{double}]{activation\+\_\+ratio}{ = {\ttfamily 0.3}, }\item[{double}]{integral\+\_\+ratio}{ = {\ttfamily 0.2}, }\item[{bool}]{block}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Spin the motor to a specified position with specified parameters. 
+
+spin\+\_\+to 
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to spin to (degrees) \\
+\hline
+{\em tolerance} & Tolerance for the spin (degrees) \\
+\hline
+{\em maximum} & Maximum voltage for the motors (volts) \\
+\hline
+{\em minimum} & Minimum voltage for the motors (volts) \\
+\hline
+{\em activation\+\_\+ratio} & Activation ratio for the \doxylink{class_p_i_d}{PID} controller \\
+\hline
+{\em integral\+\_\+ratio} & Integral ratio for the \doxylink{class_p_i_d}{PID} controller \\
+\hline
+{\em block} & Block until the spin is complete-\/ true to block, false to run asynchronously. Defaults to true. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+Activation and integral ratios are given in the range of \mbox{[}0.\+0, 1.\+0\mbox{]}. Since the \doxylink{class_p_i_d}{PID} controller expects an absolute error, the activation ratio is used to determine when to activate the controller. For example, with a motor turn of 90 degrees and an activation\+\_\+ratio of 0.\+3, the controller will output maximum voltage until the robot is within 90\texorpdfstring{$\ast$}{*}0.3=27 degrees of the target angle. Similarly, if the integral\+\_\+ratio is set to 0.\+2, the controller will disable integration until the wheel is within 90\texorpdfstring{$\ast$}{*}0.2=18 degrees of the target position. 
+\end{DoxyAttention}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a015fd5308d4d27e5dcf7f9ea3d5c03f6}\index{Motor@{Motor}!stop@{stop}}
+\index{stop@{stop}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_motor_a015fd5308d4d27e5dcf7f9ea3d5c03f6} 
+void Motor\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stop the motor. 
+
+stop \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_ab5afd7f662225640701ea51e8f0ff110}\index{Motor@{Motor}!wheel\_position@{wheel\_position}}
+\index{wheel\_position@{wheel\_position}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{wheel\_position()}{wheel\_position()}}
+{\footnotesize\ttfamily \label{class_motor_ab5afd7f662225640701ea51e8f0ff110} 
+double Motor\+::wheel\+\_\+position (\begin{DoxyParamCaption}\item[{vex\+::rotation\+Units}]{units}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the wheel position of the motor in specified units. 
+
+wheel\+\_\+position 
+\begin{DoxyParams}{Parameters}
+{\em units} & Units of the position (degrees, radians, etc.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wheel position of the motor in the specified units 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_motor_a0c07c6fc0de66f5fa44f55afc996c3ab}\index{Motor@{Motor}!spin\_to\_impl@{spin\_to\_impl}}
+\index{spin\_to\_impl@{spin\_to\_impl}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin\_to\_impl()}{spin\_to\_impl()}}
+{\footnotesize\ttfamily \label{class_motor_a0c07c6fc0de66f5fa44f55afc996c3ab} 
+static void spin\+\_\+to\+\_\+impl (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Spin to a specified position with specified parameters. 
+
+spin\+\_\+to\+\_\+impl 
+\begin{DoxyParams}{Parameters}
+{\em instance} & Pointer to the \doxylink{class_motor}{Motor} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is used for asynchronous spin\+\_\+to implementation. It is a helper function called by the spin\+\_\+to method that can run in a thread. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_motor_af1bb2f19f0b8bf73405d3271ac0e930b}\index{Motor@{Motor}!cartridge\_ratio@{cartridge\_ratio}}
+\index{cartridge\_ratio@{cartridge\_ratio}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{cartridge\_ratio}{cartridge\_ratio}}
+{\footnotesize\ttfamily \label{class_motor_af1bb2f19f0b8bf73405d3271ac0e930b} 
+double Motor\+::cartridge\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gear ratio of the motor cartridge. 
+
+cartridge\+\_\+ratio \begin{DoxyNote}{Note}
+The cartridge ratio is one of the following\+:
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item 1/6\+: blue cartridge
+\item 1/18\+: green cartridge
+\item 1/36\+: red cartridge 
+\end{DoxyItemize}\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a83a65c0490a978406edcc50303854cfd}\index{Motor@{Motor}!device@{device}}
+\index{device@{device}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily \label{class_motor_a83a65c0490a978406edcc50303854cfd} 
+vex\+::motor\texorpdfstring{$\ast$}{*} Motor\+::device}
+
+
+
+VEX motor device. 
+
+device \begin{DoxyNote}{Note}
+This is the actual underlying VEX motor device that this class wraps around and abstracts. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a559101c5e2e29fa4662701e4b6cd727b}\index{Motor@{Motor}!external\_ratio@{external\_ratio}}
+\index{external\_ratio@{external\_ratio}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{external\_ratio}{external\_ratio}}
+{\footnotesize\ttfamily \label{class_motor_a559101c5e2e29fa4662701e4b6cd727b} 
+double Motor\+::external\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+External gear ratio of the motor. 
+
+external\+\_\+ratio \begin{DoxyNote}{Note}
+The external ratio is the ratio of output spin to input spin. For instance, if the motor spins 6 times for every 1 turn of the wheel, the external ratio should be set to 1/6 as the external wheel turns 1/6 times for every 1 turn of the motor. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_aa503be1374a35029fc30e241b4b2ff92}\index{Motor@{Motor}!max\_motor\_rpm@{max\_motor\_rpm}}
+\index{max\_motor\_rpm@{max\_motor\_rpm}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{max\_motor\_rpm}{max\_motor\_rpm}}
+{\footnotesize\ttfamily \label{class_motor_aa503be1374a35029fc30e241b4b2ff92} 
+const double Motor\+::max\+\_\+motor\+\_\+rpm = 3600\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Maximum RPM of the motor-\/ equals 3600 rpm for a VEX V5 Smart \doxylink{class_motor}{Motor}. 
+
+max\+\_\+motor\+\_\+rpm \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a9e300f4731f6e4fae4b1f6d2a0523b3e}\index{Motor@{Motor}!max\_voltage@{max\_voltage}}
+\index{max\_voltage@{max\_voltage}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{max\_voltage}{max\_voltage}}
+{\footnotesize\ttfamily \label{class_motor_a9e300f4731f6e4fae4b1f6d2a0523b3e} 
+const double Motor\+::max\+\_\+voltage = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Maximum voltage of the motor-\/ equals 12V for a VEX V5 Smart \doxylink{class_motor}{Motor}. 
+
+max\+\_\+voltage \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_aa172ddd850f9d93e9175fadf094ce467}\index{Motor@{Motor}!spin\_to\_impl\_position@{spin\_to\_impl\_position}}
+\index{spin\_to\_impl\_position@{spin\_to\_impl\_position}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{spin\_to\_impl\_position}{spin\_to\_impl\_position}}
+{\footnotesize\ttfamily \label{class_motor_aa172ddd850f9d93e9175fadf094ce467} 
+double Motor\+::spin\+\_\+to\+\_\+impl\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variables for asynchronous spin\+\_\+to implementation. 
+
+spin\+\_\+to\+\_\+impl\+\_\+variables \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+\Hypertarget{class_motor_a63249877de586f4ca5dfae1b9c8af64d}\index{Motor@{Motor}!wheel\_radius@{wheel\_radius}}
+\index{wheel\_radius@{wheel\_radius}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{wheel\_radius}{wheel\_radius}}
+{\footnotesize\ttfamily \label{class_motor_a63249877de586f4ca5dfae1b9c8af64d} 
+double Motor\+::wheel\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radius of the wheel. 
+
+wheel\+\_\+radius \begin{DoxyNote}{Note}
+The wheel radius is the distance from the center of the wheel to its outer edge, in inches. The official VEX radius is not the exact radius of the wheel; it\textquotesingle{}s recommended to measure the radius of the wheel with a caliper. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2motor_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/motor.\+hpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{motor_8hpp}{motor.\+hpp}}\end{DoxyCompactItemize}

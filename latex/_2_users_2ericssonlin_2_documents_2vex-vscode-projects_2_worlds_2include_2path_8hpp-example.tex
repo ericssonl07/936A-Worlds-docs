@@ -1,0 +1,165 @@
+\doxysection{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}
+\hypertarget{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{}\label{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ the\ Coordinate2D\ struct:}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point1(3.0,\ 4.0);\ \textcolor{comment}{//\ Create\ a\ Coordinate2D\ object\ with\ x=3.0\ and\ y=4.0}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point2\ =\ point1\ +\ \mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}(1.0,\ 2.0);\ \textcolor{comment}{//\ Add\ two\ Coordinate2D\ objects}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point3\ =\ point1\ -\/\ point2;\ \textcolor{comment}{//\ Subtract\ two\ Coordinate2D\ objects}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point4\ =\ point1\ *\ 2.0;\ \textcolor{comment}{//\ Multiply\ a\ Coordinate2D\ object\ by\ a\ scalar}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ point5\ =\ point1\ /\ 2.0;\ \textcolor{comment}{//\ Divide\ a\ Coordinate2D\ object\ by\ a\ scalar}}
+\DoxyCodeLine{std::cout\ <<\ point1\ <<\ std::endl;\ \textcolor{comment}{//\ Print\ a\ Coordinate2D\ object}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ the\ CubicExpression\ struct:}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_cubic_expression}{CubicExpression}}\ cubic1(1.0,\ 2.0,\ 3.0,\ 4.0);\ \textcolor{comment}{//\ Create\ a\ CubicExpression\ object}}
+\DoxyCodeLine{std::cout\ <<\ cubic1\ <<\ std::endl;\ \textcolor{comment}{//\ Print\ a\ CubicExpression\ object}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ the\ CubicSpline\ class:}}
+\DoxyCodeLine{\mbox{\hyperlink{class_cubic_spline}{CubicSpline}}\ spline(\{0.0,\ 1.0,\ 2.0\},\ \{0.0,\ 1.0,\ 4.0\});\ \textcolor{comment}{//\ Create\ a\ CubicSpline\ object}}
+\DoxyCodeLine{std::vector<double>\ values\ =\ \{0.5,\ 1.5,\ 2.5\};\ \textcolor{comment}{//\ Values\ to\ evaluate\ the\ spline}}
+\DoxyCodeLine{std::vector<double>\ results\ =\ spline(values);\ \textcolor{comment}{//\ Evaluate\ the\ spline\ at\ the\ given\ values}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ result\ :\ results)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ result\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \textcolor{comment}{//\ Print\ the\ results}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ usage\ of\ Path\ class:}}
+\DoxyCodeLine{std::vector<double>\ x\_values\ =\ \{0.0,\ 1.0,\ 2.0,\ 3.0\};}
+\DoxyCodeLine{std::vector<double>\ y\_values\ =\ \{0.0,\ 1.0,\ 4.0,\ 9.0\};}
+\DoxyCodeLine{\mbox{\hyperlink{class_path}{Path}}\ path(x\_values,\ y\_values);\ \textcolor{comment}{//\ Create\ a\ Path\ object\ with\ given\ x\ and\ y\ values}}
+\DoxyCodeLine{path.serialize(\textcolor{stringliteral}{"{}path.txt"{}});\ \textcolor{comment}{//\ Serialize\ the\ path\ to\ a\ file}}
+\DoxyCodeLine{\mbox{\hyperlink{class_path}{Path}}\ loaded\_path(\textcolor{stringliteral}{"{}path.txt"{}});\ \textcolor{comment}{//\ Load\ the\ path\ from\ a\ file}}
+\DoxyCodeLine{\mbox{\hyperlink{class_path}{Path}}\ path2(\{\{0.0,\ 0.0\},\ \{1.0,\ 1.0\},\ \{2.0,\ 4.0\},\ \{3.0,\ 9.0\}\});\ \textcolor{comment}{//\ Create\ a\ Path\ object\ with\ given\ points}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ PATH\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ PATH\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{matrix_8hpp}{matrix.hpp}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_coordinate2_d}{Coordinate2D}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_abbef338e19b6ce8442a72d5fdf2b1152}{x}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_a0a78d5bdf6ce2466f0be2b34054993ca}{y}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_abbef338e19b6ce8442a72d5fdf2b1152}{x}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinate2_d_a0a78d5bdf6ce2466f0be2b34054993ca}{y}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}(std::pair<double,\ double>\ point);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}(\mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ \mbox{\hyperlink{struct_coordinate2_d_a54cccf3e17e6106abc4e40afb3ba6730}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ \mbox{\hyperlink{struct_coordinate2_d_a54cccf3e17e6106abc4e40afb3ba6730}{operator=\ }}(\mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ad806e8441627d3077a3d2446b30e3e8b}{\string~Coordinate2D}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \mbox{\hyperlink{struct_coordinate2_d_ab6ea43cc68af67c592c7e60fb1a6d8dd}{operator+\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ other);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \mbox{\hyperlink{struct_coordinate2_d_ad81d3052dd9a288cb691a35e23d2d2f9}{operator-\/\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ other);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \mbox{\hyperlink{struct_coordinate2_d_ab67560349dea020657e2b903b35da693}{operator*\ }}(\textcolor{keywordtype}{double}\ scalar);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \mbox{\hyperlink{struct_coordinate2_d_a61412987a9c4be31926ad19527d41586}{operator/\ }}(\textcolor{keywordtype}{double}\ scalar);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\ \mbox{\hyperlink{struct_coordinate2_d_ab67560349dea020657e2b903b35da693}{operator*\ }}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ point);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{struct_coordinate2_d_a72261e66c8f8450dcb7bbe8813dfbbf3}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coordinate2_d_ab9c111568033f58be98d93aed385554a}{Coordinate2D}}\&\ point);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cubic_expression}{CubicExpression}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}(\mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\ \mbox{\hyperlink{struct_cubic_expression_a30dbd92c4980302ca7f495ccda937a44}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\ \mbox{\hyperlink{struct_cubic_expression_a30dbd92c4980302ca7f495ccda937a44}{operator=\ }}(\mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_cubic_expression_a68768d53803545c11866fb06b14b33e3}{\string~CubicExpression}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{struct_cubic_expression_a8e5e5076f81a863ffbc6e7a90e960323}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{CubicExpression}}\&\ expression);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_cubic_spline}{CubicSpline}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Path;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ Matrix\ \mbox{\hyperlink{class_cubic_spline_a3b5c00363b0edb2a56977d5a564606e1}{operations}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<CubicExpression>\ \mbox{\hyperlink{class_cubic_spline_a02fb35fffef4fb37a07c46e8412ff83f}{coefficients}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_aff9a6a3d3daabebb817503e4f14391c8}{piecewise\_boundaries}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_ac01b8a52279f025ac83db3ef099da0b2}{linspace}}(\textcolor{keywordtype}{double}\ start,\ \textcolor{keywordtype}{double}\ end,\ \textcolor{keywordtype}{int}\ point\_count);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cubic_spline_ac44e4865ce219c8e14d2a617c7bca21f}{get\_segment}}(\textcolor{keywordtype}{double}\ of);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_cubic_spline_adb03a85f114425ebd0f5927a2933c13b}{CubicSpline}}(std::vector<double>\ x\_values,\ std::vector<double>\ y\_values);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_cubic_spline_a8dce74f66d0da52efafc1c2058780839}{operator()\ }}(std::vector<double>\ values);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_path}{Path}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Pursuit;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Chassis;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<Coordinate2D>\ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_path_a926e1e266ebab17718731928a97447a7}{construct\_path}}(std::vector<double>\ x,\ std::vector<double>\ y,\ \textcolor{keywordtype}{int}\ point\_count);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ Coordinate2D\ \mbox{\hyperlink{class_path_a7154757b1c75b64b39527edc5b74ba43}{operator\ []\ }}(\textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::size\_t\ \mbox{\hyperlink{class_path_a0fc21fee4cca5ca64cd694e3e87bd014}{size}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}(std::vector<double>\ x,\ std::vector<double>\ y,\ \textcolor{keywordtype}{int}\ point\_count\ =\ -\/1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}(std::vector<std::pair<double,\ double>>\ \mbox{\hyperlink{class_path_a25647056de9ecdcd9d12d83b0f037b7e}{points}},\ \textcolor{keywordtype}{int}\ point\_count\ =\ -\/1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}(std::string\ filename);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}(\mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\ \mbox{\hyperlink{class_path_a3f8b928adb64ffa9a8bab037df3999cd}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\ \mbox{\hyperlink{class_path_a3f8b928adb64ffa9a8bab037df3999cd}{operator=\ }}(\mbox{\hyperlink{class_path_af26cfab021ddf49af73da3b2beca85ac}{Path}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_path_af0ac6fa41445afb1337da35c49b688cd}{serialize}}(std::string\ filename);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ PATH\_HPP}}
+
+\end{DoxyCodeInclude}
+ 

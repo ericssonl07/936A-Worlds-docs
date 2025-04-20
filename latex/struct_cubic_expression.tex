@@ -1,0 +1,235 @@
+\doxysection{Cubic\+Expression Struct Reference}
+\hypertarget{struct_cubic_expression}{}\label{struct_cubic_expression}\index{CubicExpression@{CubicExpression}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}{Cubic\+Expression}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression_acdc4e56b91d67e7905f423715bf6f2f8}{Cubic\+Expression}} (double \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}}, double \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}}, double \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}}, double \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression_ae09198657f0558ded2a6de3947b14473}{Cubic\+Expression}} (const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression_a6c871e877ed265c90002c06548950e42}{Cubic\+Expression}} (\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \& \mbox{\hyperlink{struct_cubic_expression_a30dbd92c4980302ca7f495ccda937a44}{operator=}} (const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Assignment operator for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \& \mbox{\hyperlink{struct_cubic_expression_a551e0a8c0c397a53275905204d55f448}{operator=}} (\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment operator for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cubic_expression_a68768d53803545c11866fb06b14b33e3}{\texorpdfstring{$\sim$}{\string~}\+Cubic\+Expression}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}{a}}
+\begin{DoxyCompactList}\small\item\em Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{3\}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_cubic_expression_acebdb87f622a14af782641d360803aed}{b}}
+\begin{DoxyCompactList}\small\item\em Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{2\}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}{c}}
+\begin{DoxyCompactList}\small\item\em Coefficient of x. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}{d}}
+\begin{DoxyCompactList}\small\item\em Constant term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{struct_cubic_expression_a8e5e5076f81a863ffbc6e7a90e960323}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&expression)
+\begin{DoxyCompactList}\small\item\em Evaluate the cubic expression at a given x value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492}\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{CubicExpression()}{CubicExpression()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a67b5847e9ddead2f87faaba1c8de2492} 
+Cubic\+Expression\+::\+Cubic\+Expression (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+constructor
+
+Initializes the coefficients a, b, c, and d to 0.\+0. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+\Hypertarget{struct_cubic_expression_acdc4e56b91d67e7905f423715bf6f2f8}\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{CubicExpression()}{CubicExpression()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_acdc4e56b91d67e7905f423715bf6f2f8} 
+Cubic\+Expression\+::\+Cubic\+Expression (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{, }\item[{double}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em a} & Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{3\} \\
+\hline
+{\em b} & Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{2\} \\
+\hline
+{\em c} & Coefficient of x \\
+\hline
+{\em d} & Constant term\\
+\hline
+\end{DoxyParams}
+Initializes the coefficients a, b, c, and d to the specified values. \Hypertarget{struct_cubic_expression_ae09198657f0558ded2a6de3947b14473}\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{CubicExpression()}{CubicExpression()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_ae09198657f0558ded2a6de3947b14473} 
+Cubic\+Expression\+::\+Cubic\+Expression (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em coefficients} & A vector of coefficients \mbox{[}a, b, c, d\mbox{]}\\
+\hline
+\end{DoxyParams}
+Initializes the coefficients a, b, c, and d to the specified values. \Hypertarget{struct_cubic_expression_a6c871e877ed265c90002c06548950e42}\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\index{CubicExpression@{CubicExpression}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{CubicExpression()}{CubicExpression()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a6c871e877ed265c90002c06548950e42} 
+Cubic\+Expression\+::\+Cubic\+Expression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move constructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{struct_cubic_expression}{Cubic\+Expression} object to move from\\
+\hline
+\end{DoxyParams}
+Initializes the coefficients a, b, c, and d to the values of the specified object. \Hypertarget{struct_cubic_expression_a68768d53803545c11866fb06b14b33e3}\index{CubicExpression@{CubicExpression}!````~CubicExpression@{\texorpdfstring{$\sim$}{\string~}CubicExpression}}
+\index{````~CubicExpression@{\texorpdfstring{$\sim$}{\string~}CubicExpression}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CubicExpression()}{\string~CubicExpression()}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a68768d53803545c11866fb06b14b33e3} 
+Cubic\+Expression\+::\texorpdfstring{$\sim$}{\string~}\+Cubic\+Expression (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+destructor
+
+Cleans up the resources used by the \doxylink{struct_cubic_expression}{Cubic\+Expression} object. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_cubic_expression_a30dbd92c4980302ca7f495ccda937a44}\index{CubicExpression@{CubicExpression}!operator=@{operator=}}
+\index{operator=@{operator=}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a30dbd92c4980302ca7f495ccda937a44} 
+\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \& Cubic\+Expression\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Assignment operator for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+assignment operator 
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{struct_cubic_expression}{Cubic\+Expression} object to assign from\\
+\hline
+\end{DoxyParams}
+Assigns the coefficients a, b, c, and d of the specified object to this object. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+\Hypertarget{struct_cubic_expression_a551e0a8c0c397a53275905204d55f448}\index{CubicExpression@{CubicExpression}!operator=@{operator=}}
+\index{operator=@{operator=}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a551e0a8c0c397a53275905204d55f448} 
+\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \& Cubic\+Expression\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment operator for \doxylink{struct_cubic_expression}{Cubic\+Expression}. 
+
+assignment operator 
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{struct_cubic_expression}{Cubic\+Expression} object to move from\\
+\hline
+\end{DoxyParams}
+Assigns the coefficients a, b, c, and d of the specified object to this object. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{struct_cubic_expression_a8e5e5076f81a863ffbc6e7a90e960323}\index{CubicExpression@{CubicExpression}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a8e5e5076f81a863ffbc6e7a90e960323} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{struct_cubic_expression}{Cubic\+Expression}} \&}]{expression}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Evaluate the cubic expression at a given x value. 
+
+operator() 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x value to evaluate the expression at\\
+\hline
+\end{DoxyParams}
+Evaluates the cubic expression at the specified x value.
+
+\begin{DoxyReturn}{Returns}
+The result of the evaluation. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{_2_users_2ericssonlin_2_documents_2vex-vscode-projects_2_worlds_2include_2path_8hpp-example}{/\+Users/ericssonlin/\+Documents/vex-\/vscode-\/projects/\+Worlds/include/path.\+hpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413}\index{CubicExpression@{CubicExpression}!a@{a}}
+\index{a@{a}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a258c5d49e0288c8a129a7fe8d6eef413} 
+double Cubic\+Expression\+::a}
+
+
+
+Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{3\}. 
+
+a \Hypertarget{struct_cubic_expression_acebdb87f622a14af782641d360803aed}\index{CubicExpression@{CubicExpression}!b@{b}}
+\index{b@{b}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_acebdb87f622a14af782641d360803aed} 
+double Cubic\+Expression\+::b}
+
+
+
+Coefficient of x\texorpdfstring{$^\wedge$}{\string^}\{2\}. 
+
+b \Hypertarget{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029}\index{CubicExpression@{CubicExpression}!c@{c}}
+\index{c@{c}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a0a7c5a2de6cb025e307c46caaa0e2029} 
+double Cubic\+Expression\+::c}
+
+
+
+Coefficient of x. 
+
+c \Hypertarget{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e}\index{CubicExpression@{CubicExpression}!d@{d}}
+\index{d@{d}!CubicExpression@{CubicExpression}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily \label{struct_cubic_expression_a6f1cb97da15b7f1867d3c237b123482e} 
+double Cubic\+Expression\+::d}
+
+
+
+Constant term. 
+
+d 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{path_8hpp}{path.\+hpp}}\end{DoxyCompactItemize}
